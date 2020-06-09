@@ -1,0 +1,555 @@
+/*  
+  @DESCRIPTION: FATEC São Roque - 2019 - PROJETO INTEGRADOR II: página de estilo em castata para edição dos elementos visuais do Portal em geral.
+  @AUTHOR: ANDERSON NASCIMENTO / GABRIEL SHIRAI / FERNANDO ZARA / LUCAS / MARCELO FERNANDO / ISMAEL ESPÍNDOLA / VINÍCIUS LESSA.
+  @VERSION: 1.0.
+  @DATE: FATEC São Roque - 2019 - PROJETO INTEGRADOR II: página de estilo em castata para edição dos elementos visuais do Portal em geral.
+  @OBS: NIL.
+______________________________________________________________________________________________________________________________
+
+=========================================== CSS GERAL ===========================================
+
+
+
+/*=================== BODY ===================*/
+
+@import url('https://fonts.googleapis.com/css?family=Lora|Oswald&display=swap');
+
+body {height: auto; width: 100%;
+background-color: #114774;}
+
+.quemsomos .devblock {
+    background: rgba(0, 0, 0, 0.7);
+    min-height: 650px;
+}
+
+.quemsomos .devblock-bottom {background: rgba(0, 0, 0, 0.7);}
+
+
+/*=================== NAV ===================*/
+
+.breadcrumb {
+    /*margin-top: 40px;*/
+    clear: both; 
+    color: gray; 
+    font-size: .9em;
+    background-image: linear-gradient(to right, black, #114774);
+    border-radius: 0%;   
+    margin-top: 70px;
+}
+
+.breadcrumb a {
+    color: #fff;
+    font-weight: bold;
+}
+
+.cornavfooter {background-color: rgba(0,0,0,1);}
+
+
+/*=================== HEADER ===================*/
+
+header #linkheader {
+    text-align: center;
+    background-color: rgba(0,0,0,.7);
+    padding: 3.5%;
+    margin: 0 auto;
+    width: 45%;
+    height: 50%;
+}
+header .nilblock {height: 25%;}
+
+.index .gameblock {
+    /* Vinicius Lessa - 24/10/2019
+    background-image: linear-gradient(to bottom, black, #001727);*/
+    padding: 1%;
+}
+
+.separator {
+    background-color: #f9f9f9;
+    height: 1px;
+    /*width: 80%;*/
+    /* margin-left: 10%; */
+}
+
+.conta .separator {
+    display: none;
+}
+
+.politicasdeuso .separator {
+    display: none;
+}
+
+/*=================== FOOTER ===================*/
+
+footer p {text-align: center;}
+
+footer {
+	color: #d2d1d1;
+    text-align: center;
+}
+
+footer ul{
+    line-height: 1.8;
+	list-style-type: none;
+    padding-left: 0;
+}
+
+footer h5{
+    color: #f9f9f9;
+	font-size: 18px;
+    font-weight: bold;
+    margin-top: 30px;
+}
+
+footer a, ul li{
+	color: #d2d1d1;
+	text-decoration: none;
+}
+
+footer p{
+	color: #d2d1d1;
+	text-decoration: none;
+}
+
+footer a:hover, footer a:focus{
+    color: #FFF;
+	text-decoration: none;
+}
+
+footer .social-networks{
+    padding: 40px 0;
+    text-align: center;
+}
+
+footer .social-networks a{
+    color: #f9f9f9;
+    font-size: 32px;
+    margin: 0 5px;
+    padding: 10px;
+    transition: 0.2s;
+}
+
+footer .facebook:hover{color: darkgray;}
+footer .google:hover{color: darkgray;}
+footer .twitter:hover{color: darkgray;}
+
+
+/*=================== FONTES E TEXTO ===================*/
+
+* {font-family: 'Oswald', 'Arial', sans-serif;}
+
+p {
+    font-family: 'Abel', 'Lora', serif;
+    text-align: left;
+}
+.contatos label {color: white;}
+.conta form {color: white;}
+
+/* p {font-family: 'Lora', 'Times New Roman', serif;} */
+
+
+/*=================== IMAGENS E FOTOS ===================*/
+
+.allimg {
+    background-repeat: no-repeat;
+    background-size: cover; 
+}
+
+.blockimg {
+    background-attachment: scroll;
+    background-position: center center;
+    max-height: 100%;
+}
+
+.imgaside {
+    height: 150px;
+    background-image: url(https://olhardigital.com.br/uploads/acervo_imagens/2016/03/r16x9/20160314160929_1200_675.jpg);
+}
+
+.imgsection {
+    height: 150px;
+    background-image: url(https://i.ytimg.com/vi/-IwtlagrYOA/maxresdefault.jpg);
+}
+
+header #imgheader {
+    background-image: url(../images/allgames.webp);
+    background-repeat: no-repeat;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover; 
+    height: 650px; 
+}
+
+/* Deixa as IMAGENS sem opacidade, para que o leitor de telas possa identificá-las*/
+.imgarticle {
+    max-width: 100%;  
+    opacity: 0;
+}
+
+/* Background dos BLOCOS das imagens*/
+
+.reddead {background-image: url("../images/reddead1.webp");}
+.skyrim {background-image: url("../images/skyrim1.webp");}
+.gtasa {background-image: url("../images/Vinicius/gtasa1.webp"); background-position: bottom;}
+.thewitcher {background-image: url("../images/Vinicius/thewitcher.webp");}
+.lastofus {background-image: url("../images/Vinicius/lastofus1.webp");}
+.magnavox {background-image: url("../images/Anderson/magnavox.webp"); background-position: bottom;}
+.desenvolv {background-image: url("../images/Zara/desenvolvedores_de_game.webp");}
+
+
+.quemsomos .devimg {margin: 0 17%;}
+.quemsomos .devblock-bottom .devimg {margin: 0 19%;}
+
+
+/*=================== ESPECÍFICOS ===================*/
+
+
+/*===== BOTÕES =====*/
+
+header .btn-outline-secondary {color: #dedede;}
+header .btn-outline-secondary:hover {background: rgba(18, 63, 185, 0.8); color: #c4c2bf;}
+
+
+
+/*===== HR'S =====*/
+
+.bestxxi hr{border-top: 1px solid rgb(230, 230, 230);}
+
+
+/*===== OUTROS =====*/
+
+/* Posicionamento - Páginas MELHORES DO SÉCULO */
+.asideblock {margin-left: 5%;}
+.bestxxi .aside {background: rgba(0,0,0,0.7);} 
+.bestxxi .placeblock-right {padding: 5px 0 5px 20px}
+.bestxxi .placeblock-left {padding: 5px 20px 5px 0px}
+.bestxxi .table {color: white;}
+
+/* numeração dos games - 'Melhores do Século' */
+.bestxxi .place {
+    color: rgb(219, 219, 219);
+    border-radius: 5px;
+    border: 1px solid gray;
+    padding: 0px 8px;
+}
+
+/* TAG <HR> DE TODO O SITE */
+.hr {
+    border: 1px solid rgb(102, 102, 102);
+    width: 102%;
+}
+
+/* BOTÕES DE IDIOMA */
+
+.lang span {
+    display: block;
+    color: rgb(233, 233, 233);
+    padding-bottom: 5px;
+}
+
+.lang button {
+    padding: 0 8px;
+    background: rgba(0,0,0,0.0);
+    border: 0px;
+}
+
+.lang button:hover {cursor:pointer;}
+
+
+/* INVERTE A ORDEM DE EXIBIÇÃO DO CONTEÚDO DENTRO DE UM CONTAINER */
+.invert {
+    flex-direction: row-reverse;
+}
+
+.mobileTheme {
+    background:  rgba(0,0,0,0.3);
+}
+
+
+/*================================ MEDIA QUERIES ================================*/
+
+/* Small devices (landscape phones, 576px and up) */
+@media (max-width: 450px) and (min-width: 50px) {
+    header #linkheader {
+        width: 100%;
+        background: rgba(0,0,0,0);
+    }
+    .imagem1 {
+        opacity: 0.9;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 10px 20px 20px 20px;
+        width: 375%;
+    }
+    .bestxxi .aside {height: auto;}
+    .bestxxi .hr {display: none;}
+    .quemsomos .devimg {margin: 0 10%;}
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (max-width: 768px) and (min-width: 451px) {
+    .quemsomos .devimg {margin: 0 27%;}
+    .quemsomos .devblock-bottom .devimg {margin: 0 29%;}
+}
+
+@media (max-width: 768px) and (min-width: 50px) {
+    .hr {display: none;}
+    .asideblock {margin-left: 0%;}
+    .bestxxi .placeblock-left h3 {text-align: center;}
+    .bestxxi .placeblock-right h3 {text-align: center;}
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (max-width: 992px) and (min-width: 769px){
+    .quemsomos .devimg {margin: 0 33%;}
+    .quemsomos .devblock-bottom .devimg {margin: 0 34%;}
+}
+
+@media (max-width: 992px) and (min-width: 50px){ 
+    .asideblock {margin-left: 0%;}
+    header #imgheader{background-size: cover;}
+    .hr {width: 100%}
+    .bestxxi .placeblock-left {margin-top: 15px; padding: 0 10px;}
+    .bestxxi .placeblock-right {margin-top: 15px; padding: 0 10px;}
+    .bestxxi .blockimg {height: 380px;}
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+    .bestxxi .aside {height: 800px;}
+}
+
+/* Específicos */
+@media (max-width: 1200px) and (min-width: 993px){
+    .quemsomos .devimg {margin: 0 8%;}
+}
+
+@media (max-width: 1200px) and (min-width: 50px){
+    header #linkheader {
+        width: 100%;
+        height: 60%;
+    }
+
+    header .nilblock {height: 20%;}
+
+    header #imgheader{height: 480px;}
+}
+
+.lang_switcher {
+    float: right;
+    overflow: hidden;
+}
+
+
+/*=========================================== CSS ANDERSON  =============================================*/
+
+.btnanderson{
+    background-image:linear-gradient(#0f0c29,#302b63,#24243e);
+    border-color: black;    
+}
+
+.cardvideogame{
+    background-color:blue;
+    border:solid 1px;
+     background-image:linear-gradient( to top,#005AA7,#FFFDE4);
+}
+
+.imganderson {
+    border:solid 1.5px;
+    display: block;
+}
+
+/*=========================================== CSS ZARA  =============================================*/
+
+.devcreators .row {padding: 2% 0 2% 0;}
+
+.devcreators .text h4{
+    color: white;
+    font-size: 20px;
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    opacity: none;
+  }
+  
+  .devcreators .text p {
+      text-align: justify;
+      font-size: 0.9em;
+      position: absolute;
+      top: 35%;
+      padding: 5px 10px;  
+  }
+  
+  .devcreators .text {width: 100%;}
+  
+  
+  .devcreators .fundo {
+      background-image: url(https://cdn-images-1.medium.com/max/2600/1*Veun6E1Q13DxZ2A4YRk_og.jpeg);
+      background-position: top;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
+      padding: 12% 0;
+  }
+  
+.devcreators .titulo2{
+      align-items: center;
+  }
+
+.imagem1 {
+    opacity: 0.9;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+   
+    width: 100%;
+}
+
+/*===========================================CSS MARCELO  =============================================*/
+.personal-computer .cardmarcelo{
+    background-color:darkslateblue;
+    border:solid 1px;
+     background-image:linear-gradient( to top, #345e8c,#FFFDE7);
+    
+}
+.personal-computer .btnmarcelo{
+    background-image:linear-gradient(#0f0c05,#302b63,#24243e);
+    border-color: white;
+    
+}
+.personal-computer .imgmarcelo {
+    border:solid 1.5px;
+    display: block;
+}
+
+.personal-computer section ul li a {
+    color: #f9f9f9;
+}
+
+/*===========================================CSS SHIRAI  =============================================*/bestxx
+
+.lancamentosgab .h1top{border-style: solid; border-right: none;border-top: none;border-bottom: none;border-color: #0e96de ; border-width: 9px; padding: 10px;
+                            background-image: linear-gradient(to right,#114774, rgb(81, 165, 185),rgba(81, 165, 185, 0.82),#ededed);}
+
+.lancamentosgab h1{text-shadow: 2px 2px 6px rgba(204, 204, 204, 0.88);}
+
+.lancamentosgab h3 {color: #ffffff;;text-shadow: 2px 2px 8px rgba(3, 3, 3, 0); border-style: solid; border-color: #0e96de; border-top: none; border-bottom: none;
+                             border-right: none; border-width: 6px; padding: 6px;}
+
+.lancamentosgab p {color: #ffffff;; font-size: 1.1em; text-align: left;}
+
+.lancamentosgab h4{ font-size: 1.3em}
+
+.lancamentosgab .h3menor{font-size: 1.3em;}
+
+.lancamentosgab .bordah3{border-style: solid; border-top: none; border-right: none; border-bottom: none;border-color: #0e96de; border-width: 5px; padding: 6px;}
+
+.lancamentosgab hr{border-top: 1px solid rgb(255, 255, 255)}
+
+.lancamentosgab .hrside{border-top: 1px solid #000000;border-bottom: 1px solid #363636}
+
+.lancamentosgab .fundosec{background-color: rgba(46, 45, 45, 0.89);}
+
+.lancamentosgab .sombraV{box-shadow: 5px 6px 8px rgba(0, 0, 0, 0.9);}
+
+.lancamentosgab .sombraC{box-shadow: 10px 10px 8px rgba(0, 0, 0, 0.9); }
+
+.lancamentosgab .bordaimg{border-style: dotted ; color: black}
+
+
+/*=========================================== CSS VINICIUS (Clássicos) =============================================*/
+
+#divclassicos {
+    background: #bdc3c7; /* fallback for old browsers */
+    background: -webkit-linear-gradient(
+      to right,#2c3e50, #bdc3c7 ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #020202, #bdc3c7); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    color:#FFF;
+  }
+  
+  /*font padrao das paginas classicos*/
+
+  div.home-classicos {
+    width: 100%;
+    height: 50vh;
+    background: url(../images/reddead1.webp) #000;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  div.classicos-home-sct {
+    width: 100%;
+    height: 400px;
+    text-shadow: 1px 2px 1px #080808;
+  }
+  
+  div#classicos-home-1 {
+    background: url(../images/Vinicius/thewitcher.webp) #000;
+    background-size: cover;
+    background-position: center;
+  }
+  div#classicos-home-2 {
+    background: url(../images/skyrim1.webp) #000;
+    background-size: cover;
+    background-position: center;
+  }
+  div#classicos-home-3 {
+    background: url(../images/Vinicius/gtasa1.webp) #000;
+    background-size: cover;
+    background-position: center;
+  }
+  
+  .classicos-home-sct:hover,
+  .destaque-classicos div.card:hover {
+    box-shadow: 0 18px 32px -18px #000;
+    -webkit-transform: translateY(-6px);
+    transform: translateY(-6px);
+  }
+  
+  .classicos-home-sct {
+    transition: all 0.2s ease-in-out;
+  }
+
+  .classicos section a {
+    color: #f9f9f9;
+  }
+
+  .classicos article td a {
+    color: #f9f9f9;
+  }
+
+  p.texto-home {
+    position: absolute;
+    bottom: -1px;
+  }
+  
+  .card-artista {
+    width: 100%;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  
+      /*=========================================== PADRONIZAÇÃO DE FONTES, BACKGROUND, BREADCRUMB E BOTÕES =============================================*/
+  
+h1,h2,h3,h4,h5,h6,th,td {
+    color: #ffffff;
+}
+
+p { color: #ffffff;
+    font-size: 1.1em; 
+    text-align: left;}
+
+.breadcrumb {background-image: linear-gradient(to right, black, #114774);}
+
+.btn-light {
+    font-size: .9em;
+    color: #005AA7;
+}
+
+.btn-light:hover {
+    text-decoration: none;
+}
