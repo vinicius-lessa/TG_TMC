@@ -3,9 +3,9 @@
 <?php 
     //header("Content-type: text/html; charset=UTF-8");
 
-    if (session_status() != 2) {
-        session_start();
-    } 
+   // if (session_status() != 2) {
+   //     session_start();
+   // } 
 ?>       
     <nav alt='' class='navbar navbar-expand-md navbar-dark cornavfooter fixed-top'>            
         <a class='navbar-brand' href='index.php'>TMC - Music Trade Center</a> <!-- home -->
