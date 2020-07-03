@@ -1,20 +1,6 @@
 <?php
 
-// $dir = '/Games.com';
-// $DIRNAME = explode("/", $_SERVER['REQUEST_URI']);
-// $dir = rtrim("/". $DIRNAME[1], "/");
-
-//print_r($DIRNAME);
 $dir = "/FATEC/4_SEMESTRE/Tmc.com/";
-
-// if (realpath("../root")) {
-//     $dir = "/";
-// } else {
-//     $DIRNAME = explode('\\', realpath("config.php"));
-//     $dir = $DIRNAME[count($DIRNAME)-2];
-// }
-
-
 
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);

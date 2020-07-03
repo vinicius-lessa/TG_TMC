@@ -1,25 +1,23 @@
 <?php
-/* 
-4 SEMESTRE - SISTEMAS PARA INTERNET
-Author: Vinícius Lessa da Silva
-Since: 2020/06/19
-*/
-/*REMOVER WARNING*/
+  /* 
+  4 SEMESTRE - SISTEMAS PARA INTERNET
+  Author: Vinícius Lessa da Silva / Anderson Nascimento
+  Since: 2020/06/19
+  */
 
-// session_start();
+  if (!defined('SITE_URL')) {
+    include_once '../../config.php';
+  }
 
-if (!defined('SITE_URL')) {
-  include_once '../../config.php';
-}
+  if (session_status() === PHP_SESSION_NONE) {
+    session_start();
+  }
 
-if (session_status() === PHP_SESSION_NONE) {
-  session_start();
-}
+  $titlePage = 'Sua Loja de Instrumentos on-line';
+  $data_slide = 0;
 
-$titlePage = 'Sua Loja de Instrumentos on-line';
-$data_slide = 0;
-require SITE_PATH . '/Controllers/c_home.php';
-// print_r($itensCarrosel);
+  require SITE_PATH . '/Controllers/c_home.php';
+
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -128,7 +126,6 @@ require SITE_PATH . '/Controllers/c_home.php';
       /**Carregar a pagina de erro quando não tiver produto cadastrado */
       include SITE_PATH . '/includes/erroCarregarProduto.php';
     } ?>
-
   </div>
 </section>
 

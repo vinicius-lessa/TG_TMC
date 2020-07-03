@@ -1,11 +1,13 @@
 <?php
-/*ITENS NO CARRINHO*/
-$itPendentes = false;
-if (isset($_SESSION['carrinho'])) {
-    $itPendentes = count($_SESSION['carrinho']);
-}
+
+  /*ITENS NO CARRINHO*/
+  $itPendentes = false;
+  if (isset($_SESSION['carrinho'])) {
+      $itPendentes = count($_SESSION['carrinho']);
+  }
 
 ?>
+
 <header class="menu-principal bk-preto mb-4">
   <div class="container-fluid pt-3 pl-2 pr-3">
     <div class="row">

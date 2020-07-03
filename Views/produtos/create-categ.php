@@ -1,7 +1,7 @@
 <?php
 /* 
 4 SEMESTRE - SISTEMAS PARA INTERNET
-Author: Vinícius Lessa da Silva
+Author: Vinícius Lessa da Silva / Anderson Nascimento
 Since: 2020/06/19
 */
 /*REMOVER WARNING*/
