@@ -18,8 +18,6 @@
 
   require SITE_PATH . '/Controllers/c_produto.php';
 
-
-
   // Titulo da pagina mudar de acordo com a pagina acessada
   $titlePage = "Produto " . $infoProduto['nome_prod'];
 ?>

@@ -1,22 +1,21 @@
 <?php
-/* 
-4 SEMESTRE - SISTEMAS PARA INTERNET
-Author: Vinícius Lessa da Silva / Anderson Nascimento
-Since: 2020/06/19
-*/
-/*REMOVER WARNING*/
-if (!defined('SITE_URL')) {
-    include_once '../../config.php';
-}
+  /* 
+  4 SEMESTRE - SISTEMAS PARA INTERNET
+  Author: Vinícius Lessa da Silva / Anderson Nascimento
+  Since: 2020/06/19
+  */
 
-$titlePage = "Cadastrar Produto";
-$selectgenero = [];
-$selectcategoria = [];
+  if (!defined('SITE_URL')) {
+      include_once '../../config.php';
+  }
 
+  $titlePage = "Cadastrar Produto";
+  $selectgenero = [];
+  $selectcategoria = [];
 
-require SITE_PATH . '/Controllers/c_produto.php';
-
+  require SITE_PATH . '/Controllers/c_produto.php';
 ?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 

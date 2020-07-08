@@ -112,9 +112,9 @@
                   </p>
                 </div>
                 <div class="card-footer border-0 bg-transparent">
-                  <a
-                    href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $itemSugestao['cod_produto'] ?>"
-                    class="btn btn-dark btn-block btn-comprar">Comprar</a>
+                  <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $itemSugestao['cod_produto'] ?>&valor=<?php echo $itemSugestao['valor_un'] ?>" class="btn btn-dark btn-block btn-comprar">
+                    Comprar
+                  </a>
                 </div>
               </div>
             </a>

@@ -195,13 +195,6 @@ function deletarproduto($conn, $dados)
 
   $stmt->execute();
 
-  // Chave Estrangeira - Favoritos
-  $sql = 'DELETE FROM favorito WHERE cod_produto = ?';  
-  $stmt = $conn->prepare($sql);
-  $stmt->bind_param('i', $dados);
-
-  $stmt->execute();
-
   // Chave Primária
   $sql2 = 'DELETE FROM produto WHERE cod_produto = ?';
   $stmt = $conn->prepare($sql2);
@@ -229,15 +222,3 @@ function carregarProdutosCategoria($conn, $codCategoria, $limit = 12, $offset = 
   $stmt->close();
   return $result;
 }
-
-/* LISTAR NA INDEX OS PRODUTOS */
-// function carregarprodutos($conn)
-// {
-//   $sql = "SELECT p.cod_produto, p.nome_prod, c.nome_categoria, p.estoque 
-//     FROM produto p INNER JOIN categoria c ON p.cod_categoria = c.cod_categoria ORDER BY p.nome_prod ASC ";
-//   $stmt = $conn->prepare($sql);
-//   $stmt->execute();
-//   $result = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
-//   $stmt->close();
-//   return $result;
-// }

@@ -25,17 +25,8 @@ if (isset($_POST['alterar'])) {
         }
     }
 
-//  var_dump($dados);
-
     if (alterarCliente($dados, $conn)) {
-        /*
-        Var_Dump($_GET);
-        echo "<br><br>";        
-        Var_Dump($_POST);
-        echo "<br><br>";
-        Var_Dump($_SESSION);
-        */
-        if($_POST['adm'] = 'true'){
+        if(isset($_POST['adm'])){
             header("location:". SITE_URL . "/Views/adm/adm-alterarCliente.php");
         } else {
             session_start();

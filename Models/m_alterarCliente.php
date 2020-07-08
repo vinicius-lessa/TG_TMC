@@ -40,12 +40,6 @@ function excluirCliente($dados, $conn)
     $stmt->bind_param("i", $dados);
     $stmt->execute();
 
-    // Favoritos
-    $sql    = 'DELETE FROM favorito WHERE cod_cliente =?';
-    $stmt   = $conn->prepare($sql) ;
-    $stmt->bind_param("i", $dados);
-    $stmt->execute();
-
     // Pedidos
     $sql    = 'DELETE FROM pedido WHERE cod_cliente =?';
     $stmt   = $conn->prepare($sql) ;

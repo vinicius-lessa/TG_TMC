@@ -80,7 +80,7 @@ if ($listaGuitarras) {?>
                 </p>
               </div>
               <div class="card-footer border-0 bg-transparent">
-                <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $produto['cod_produto'] ?>"
+                <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $produto['cod_produto'] ?>&valor=<?php echo $produto['valor_un'] ?>"
                   class="btn btn-dark btn-block btn-comprar">Comprar</a>
               </div>
             </div>

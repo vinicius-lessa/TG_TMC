@@ -70,11 +70,11 @@ foreach ($itensCarrinho as $itemCarrinho) {
                 <tr>
                   <td>
                     <img src="<?php echo SITE_URL ?>/images/produtos/<?php echo $itemCarrinho['cover_img'] ?>"
-                      alt="Capa do Jogo" class="img-thumbnail img-carrinho">
+                      alt="Capa do Produto" class="img-thumbnail img-carrinho">
                   </td>
                   <td class="align-middle">
                     <a
-                      href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?jogo=<?php echo $itemCarrinho['cod_produto'] ?>">
+                      href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $itemCarrinho['cod_produto'] ?>">
                       <?php echo $itemCarrinho['nome_prod']; ?>
                     </a>
                   </td>
