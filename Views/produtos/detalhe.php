@@ -18,7 +18,7 @@
 
   require SITE_PATH . '/Controllers/c_produto.php';
 
-  include SITE_PATH . '/Controllers/c_favorito.php';
+
 
   // Titulo da pagina mudar de acordo com a pagina acessada
   $titlePage = "Produto " . $infoProduto['nome_prod'];

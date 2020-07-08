@@ -7,7 +7,7 @@ Since: 2020/06/19
 if (!defined('SITE_URL')) {
   include_once '../../config.php';
 }
-$titlePage = 'ADM Games.com'
+$titlePage = 'ADM Loja'
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -28,7 +28,7 @@ $titlePage = 'ADM Games.com'
     <div class="row justify-content-md-center mt-5 mb-5 ">
       <div class="col-md-9 text-center rounded quadro-sucess">
         <h1>Usuário Criado com Sucesso!</h1>
-        <p>Click <a href="index.php ">aqui</a> para acessar a area ADM de Games.com</p>
+        <p>Click <a href="index.php ">aqui</a> para acessar a area ADM de Loja</p>
       </div>
     </div>
   </div>
