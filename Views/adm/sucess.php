@@ -25,11 +25,11 @@
 <body>
     <!-- menu do site -->
     <?php include SITE_PATH.'/includes/menu.php'; ?>
-  <div class="container mt-5 ">
-    <div class="row justify-content-md-center mt-5 mb-5 ">
-      <div class="col-md-9 text-center rounded quadro-sucess">
-        <h1>Usuário Criado com Sucesso!</h1>
-        <p>Click <a href="index.php ">aqui</a> para acessar a area ADM de Loja</p>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-9 text-center quadro-sucess">
+        <h1 class="font-weight-bold letra-ver">Usuário Criado com Sucesso!</h1>
+        <h5>Click <a href="index.php ">aqui</a> para acessar a area Administrativa do Site</h5>
       </div>
     </div>
   </div>

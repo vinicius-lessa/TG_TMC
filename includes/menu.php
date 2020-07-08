@@ -21,11 +21,12 @@
         <form class="box-search bk-esc" action="<?php echo SITE_URL ?>/Views/produtos/todos.php" method="get">
           <div class="row">
             <div class="col-11 p-0 m-0">
-              <input class="input-search bk-esc" type="search" name="pesquisa" id="pesquisa" placeholder="Pesquise seu instrumento">
+              <h4 class="menu-entrar font-weight-bold">Pesquisa de Produtos</h4>
+              <input class="input-search bk-esc" type="search" name="pesquisa" id="pesquisa" placeholder="Digite aqui o que procura">
             </div>
             <div class="col-1">
               <span>
-                <button class="btn-search " type="submit">IR</button>
+                <button class="btn-search font-weight-bold" type="submit">IR</button>
               </span>
             </div>
           </div>
@@ -56,7 +57,7 @@
           <?php
           } else { ?>
           <img id="icone-user" src="<?php echo SITE_URL ?>/images/icones/utilizador.svg" alt="">
-          <div class="menu-entrar">
+          <div class="menu-entrar font-weight-bold">
             <ul class="text-left">
               <li><a href="<?php echo SITE_URL ?>/Views/Clientes/loginCliente.php">Entrar</a>
               </li>
@@ -83,34 +84,36 @@
       </div>
     </div>
 
-<!--MENU PRINCIPAL-->
-    <div class="row">
-      <div class="col-12">
+      <!--MENU PRINCIPAL-->
+      <div class="row">
+      <div class="col-12 mt-4">
         <nav id="lista-menu">
           <ul>
             <li>
-              <a class="border-button ft-escuro" href="<?php echo SITE_URL ?>/Views/home/index.php"><span><img
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/home/index.php"><span><img
                     src="<?php echo SITE_URL ?>/images/icones/home.svg" alt=""></span>Home</a>
             </li>
             <li>
-              <a class="border-button ft-escuro" href="<?php echo SITE_URL ?>/Views/produtos/violao.php"><span><img
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/violao.php"><span><img
                     src="<?php echo SITE_URL ?>/images/" alt=""></span>Violão</a>
             </li>
             <li>
-              <a class="border-button ft-escuro" href="<?php echo SITE_URL ?>/Views/produtos/guitarra.php"><span><img
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/guitarra.php"><span><img
                     src="<?php echo SITE_URL ?>/images/" alt=""></span>Guitarra</a>
             </li>
             <li>
-              <a class="border-button ft-escuro" href="<?php echo SITE_URL ?>/Views/produtos/bateria.php"><span><img
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/bateria.php"><span><img
                     src="<?php echo SITE_URL ?>/images/" alt=""></span>Bateria</a>
             </li>
             <li>
-              <a class="border-button ft-escuro" href="<?php echo SITE_URL ?>/Views/produtos/todos.php"><span><img
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/todos.php"><span><img
                     src="<?php echo SITE_URL ?>/images" alt=""></span>Todos</a>
             </li>
           </ul>
         </nav>
       </div>
     </div>
+
+    
   </div>
 </header>

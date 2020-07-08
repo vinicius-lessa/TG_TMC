@@ -7,7 +7,7 @@
   <div class="collapse navbar-collapse" id="itensNav">
     <ul class="navbar-nav mr-auto">
       <li class="nav-item active">
-        <a class="nav-link" href="<?php echo SITE_URL ?>/Views/adm/adm-index.php"><strong class="ft-escuro">Gerenciar</strong>
+        <a class="nav-link" href="<?php echo SITE_URL ?>/Views/adm/adm-index.php"><strong class="ft-escuro font-weight-bold">GERENCIAMENTO</strong>
         </a>
       </li>
     </ul>

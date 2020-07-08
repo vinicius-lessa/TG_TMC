@@ -30,7 +30,7 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
   <link rel="icon" href="<?php echo SITE_URL ?>/favicon.ico" type="image/x-icon">
   <title>
-    Tcm.com | <?php echo $titlePage; ?>
+    Tmc.com | <?php echo $titlePage; ?>
   </title>
 </head>
 
@@ -39,6 +39,7 @@
 <?php include SITE_PATH . '/includes/menu.php'; ?>
 <!--conteudo da pagina -->
 <section class="destaques">
+  <h2 class="font-weight-bold text-center">DESTAQUES DE PRODUTOS</h2>
   <div id="carroselDestaques" class="carousel slide" data-ride="carousel">
     <ol class="carousel-indicators">
       <li data-target="#carroselDestaques" data-slide-to="0" class="active"></li>
@@ -112,7 +113,7 @@
                   </p>
                 </div>
                 <div class="card-footer border-0 bg-transparent">
-                  <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $itemSugestao['cod_produto'] ?>&valor=<?php echo $itemSugestao['valor_un'] ?>" class="btn btn-dark btn-block btn-comprar">
+                  <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $itemSugestao['cod_produto'] ?>&valor=<?php echo $itemSugestao['valor_un'] ?>" class="btn btn-dark btn-block btn-success">
                     Comprar
                   </a>
                 </div>
@@ -123,65 +124,9 @@
       </div>
 
     <?php } else {
-      /**Carregar a pagina de erro quando não tiver produto cadastrado */
+      /*Carregar a pagina de erro quando não tiver produto cadastrado*/
       include SITE_PATH . '/includes/erroCarregarProduto.php';
     } ?>
-  </div>
-</section>
-
-<!-- section com link para lançamentos -->
-<section>
-  <div class="jumbotron jumbotron-fluid bk-escuro mt-5">
-    <div class="container ">
-      <div class="col">
-        <h2 class="display-4 ft-laranja">Lançamentos</h2>
-        <p class="lead ft-branca">Não perca nada, fique de olho em todos os lançamentos dos mais aguardados do momento!</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- section de Destaques -->
-<section>
-    <?php if ($listaSugestao) { ?>
-      <div class="row justify-content-center">
-        <?php foreach ($listaSugestao as $itemSugestao) { ?>
-          <div class="col-sm-3 col-10 mt-2">
-            <a href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $itemSugestao['cod_produto'] ?>"
-               class="linkCardsVioloes">
-              <div class="card text-center border-0 card-produto">
-                <div class="card-header border-0 bg-transparent">
-                  <h5 class="card-title text-uppercase">
-                    <?php echo $itemSugestao['nome_prod'] ?>
-                  </h5>
-                  <p class="mt-n3"><?php echo $itemSugestao['nome_categoria'] ?>
-                  </p>
-                </div>
-                <img class="card-img-top px-4 img-cover"
-                     src="<?php echo SITE_URL ?>/images/produtos/<?php echo $itemSugestao['cover_img'] ?>"
-                     alt="Cover: <?php echo $itemSugestao['nome_prod'] ?>">
-                <div class="card-body">
-                  <p class="card-text mt-n3"><small class="text-muted">Por Apenas</small></p>
-                  <p class="card-text h2 font-weight-bold"><small>R$
-                    </small><?php echo number_format($itemSugestao['valor_un'], 2, ',', '.') ?>
-                  </p>
-                </div>
-                <div class="card-footer border-0 bg-transparent">
-                  <a
-                    href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $itemSugestao['cod_produto'] ?>"
-                    class="btn btn-dark btn-block btn-comprar">Comprar</a>
-                </div>
-              </div>
-            </a>
-          </div>
-        <?php } ?>
-      </div>
-
-    <?php } else {
-      /*Carregar erro quando não tiver produto cadastrado */
-      include SITE_PATH . '/includes/erroCarregarProduto.php';
-    } ?>
-
   </div>
 </section>
 

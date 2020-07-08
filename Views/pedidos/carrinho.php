@@ -42,7 +42,7 @@ require SITE_PATH . '/Controllers/c_pedido.php';
       <div class="container">
         <div class="row">
           <div class="tt-header-wrap">
-            <div class="tt-header">
+            <div class="tt-header font-weight-bold">
               <h2>Carrinho de Compras</h2>
               <p>Você pode fazer a finalização do seu pedido.</p>
             </div>
@@ -50,23 +50,23 @@ require SITE_PATH . '/Controllers/c_pedido.php';
         </div>
         <div class="row mt-3">
           <div class="col-md-9 col-12">
-            <table class="table">
-              <thead class="thead-dark">
+            <table class="table table-striped table-bordered font-weight-bold">
+              <thead class="thead">
                 <tr>
-                  <th scope="col">#</th>
+                  <th scope="col">Imagem</th>
                   <th scope="col">Produto</th>
                   <th scope="col">Categoria</th>
                   <th scope="col">Estoque</th>
-                  <th scope="col">Valor Un</th>
-                  <th scope="col">Qtd</th>
+                  <th scope="col">Valor</th> <!--alterei-->
+                  <th scope="col">Quantidade</th> <!--alterei-->
                   <th scope="col">Total</th>
                   <th scope="col-1">Excluir</th>
                 </tr>
               </thead>
               <tbody>
                 <?php
-foreach ($itensCarrinho as $itemCarrinho) {
-    $totalPedido += floatval($itemCarrinho['quantidade'] * $itemCarrinho['valor_un']);?>
+                  foreach ($itensCarrinho as $itemCarrinho) {
+                  $totalPedido += floatval($itemCarrinho['quantidade'] * $itemCarrinho['valor_un']);?>
                 <tr>
                   <td>
                     <img src="<?php echo SITE_URL ?>/images/produtos/<?php echo $itemCarrinho['cover_img'] ?>"
@@ -94,25 +94,25 @@ foreach ($itensCarrinho as $itemCarrinho) {
                     <?php echo number_format($itemCarrinho['quantidade'] * $itemCarrinho['valor_un'], 2, '.', '.'); ?>
                   </td>
                   <td class="align-middle text-center">
-                    <a href="./carrinho.php?remItem=<?php echo $itemCarrinho['cod_produto']; ?>">X</a>
+                    <a href="./carrinho.php?remItem=<?php echo $itemCarrinho['cod_produto']; ?>">REMOVER</a>
                   </td>
                 </tr>
                 <?php
-}?>
+                }?>
               </tbody>
             </table>
           </div>
           <div class="col-md-3 col-12">
-            <div class="card box-detalhe-jogo p-2 bk-escuro mt-1">
+            <div class="card p-2 mt-1"> <!--alterei-->
               <div class="card-body text-center">
-                <h1 class="card-title h3 text-uppercase ft-branca"> Checkout </h1>
-                <p class="card-text pt-2"><small class="text-muted">Valor Total do Pedido</small></p>
+                <h1 class="card-title h3 text-uppercase">TOTAL</h1> <!--alterei-->
+                <p class="card-text pt-2"><small class="">Valor Total da Compra</small></p> <!--alterei-->
                 <p class="card-text h2 mt-n3 ft-laranja"><?php echo number_format($totalPedido, 2, ',', '.') ?>
                 </p>
               </div>
               <div class="card-footer border-0 bg-transparent">
                 <a href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?finalizar=<?php echo $_SESSION['cod_carrinho'] ?>&total=<?php echo $totalPedido ?>"
-                  class="btn btn-dark btn-block btn-comprar btn-lg">Finalizar Pedido</a>
+                  class="btn btn-dark btn-block btn-comprar btn-lg">Finalizar Compra</a>
               </div>
             </div>
           </div>

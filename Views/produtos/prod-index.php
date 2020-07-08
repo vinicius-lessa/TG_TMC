@@ -33,15 +33,16 @@ require SITE_PATH . '/Controllers/c_produto.php';
   <main class="min-h-75">
     <div class="container">
       <div class="row justify-content-md-center">
-        <h1>Produtos</h1>
+        <h1 class="mt-3 font-weight-bold">Cadastrar, Alterar e Atualizar Produtos</h1>
+      </div>
+      <div class="row">
+        <p class="col-12 mt-4 font-weight-bold">CLIQUE AQUI PARA CADASTRAR NOVOS PRODUTOS</p>
+        <a class="col-5 btn btn-adm font-weight-bold my-2 mb-4 pt-2 pb-2" href="<?php echo SITE_URL ?>/Views/produtos/create-prod.php" role="button">Cadastrar Novo Produto</a>
       </div>
       <div class="row justify-content-md-center">
-        <a class="col-2 btn btn-adm my-2 text-light mt-4 mb-4 pt-2 pb-2" href="<?php echo SITE_URL ?>/Views/produtos/create-prod.php" role="button">Cadastrar Produto</a>
-      </div>
-      <div class="row justify-content-md-center">
-        <table class=" table text-center ">
+        <table class=" table text-center">
           <thead>
-            <tr>
+            <tr class="font-weight-bold">
               <th scope="col-1">Código</th>
               <th scope="col-4">Nome</th>
               <th scope="col-3">Categoria</th>
@@ -67,8 +68,8 @@ require SITE_PATH . '/Controllers/c_produto.php';
                   <?php echo $linha['estoque'] ?>
                 </td>
                 <td>
-                  <button type="button" class="btn btn-primary"><a class="btn text-light p-0" href="<?php echo SITE_URL ?>/Views/produtos/alter-prod.php?produto=<?php echo $linha['cod_produto']; ?>" role="button">Alterar</a></button>
-                  <button type="button" class="btn btn-dark">   <a class="btn text-light p-0" href="<?php echo SITE_URL ?>/Views/produtos/delete_prod.php?produto=<?php echo $linha['cod_produto']; ?>" role="button">Deletar</a></button>
+                  <button type="button" class="btn btn-primary"><a class="btn font-weight-bold text-white p-0" href="<?php echo SITE_URL ?>/Views/produtos/alter-prod.php?produto=<?php echo $linha['cod_produto']; ?>" role="button">Alterar</a></button>
+                  <button type="button" class="btn btn-dark">   <a class="btn font-weight-bold text-white p-0" href="<?php echo SITE_URL ?>/Views/produtos/delete_prod.php?produto=<?php echo $linha['cod_produto']; ?>" role="button">Deletar</a></button>
                 </td>
               </tr>
             <?php 

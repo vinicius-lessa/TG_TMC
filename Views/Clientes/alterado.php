@@ -29,14 +29,17 @@ $titlePage = "Alterado!";
   <!-- menu do site -->
   <?php include SITE_PATH .'/includes/menu.php';?>
 <body>
-  <div class="container mt-5 ">
-    <div class="row justify-content-md-center mt-5 mb-5 ">
-      <div class="col-md-9 text-center rounded quadro-sucess">
-        <h1>Usuário Alterado!</h1>
-        <p>Click <a href="../home/index.php">aqui</a> para voltar a home do site</p>
+  <div class="container">
+    <div class="row justify-content-md-center">
+      <div class="col-md-9 text-center quadro-sucess">
+        <h1 class="font-weight-bold letra-ver">Seu Cadastro foi Alterado Com Sucesso!</h1>
+        <h4>Click <a href="../home/index.php">aqui</a> para voltar ao site</h4>
       </div>
     </div>
   </div>
+
+    <!-- footer site -->
+    <?php include SITE_PATH .'/includes/footer.php';?>
 </body>
 
 </html>

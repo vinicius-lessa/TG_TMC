@@ -42,7 +42,7 @@ $titlePage = "Alterar Cadastro";
   <div class="container rounded">
 
 <form class="cadastroForm" action='<?php echo SITE_URL ?>/Controllers/c_alterarCliente.php' method="post">
-<h1 class="h3 mb-3 font-weight-normal text-center">ALTERAR DADOS CADASTRADOS</h1>
+<h1 class="h3 mb-3 font-weight-bold text-center mt-3">ALTERAR DADOS CADASTRADOS</h1>
   <div class="form-group inputGroup">
     <label for="nome_cliente">Nome</label>
     <input type="text" class="form-control box-search input-adm" name="nome_cliente" placeholder="NOME" value="<?php echo $dadosCliente['nome_cliente'] ?>" required>
@@ -59,8 +59,8 @@ $titlePage = "Alterar Cadastro";
   </div>
 
   <input type="hidden" name="cod_cliente" value="<?php echo $dadosCliente['cod_cliente'] ?>">
-  <input class="btn btn-dark btn-renata ml-5 mb-5 mr-0 ml-0" type="submit" value="ALTERAR" name="alterar" id="alterar">
-  <input class="btn btn-dark btn-renata ml-5 mb-5 mr-0 ml-0" type="submit" value="EXCLUIR" name="excluir" id="excluir">
+  <input class="btn btn-dark btn-r ml-5 mb-5 mr-0 ml-0" type="submit" value="ALTERAR" name="alterar" id="alterar">
+  <input class="btn btn-dark btn-r ml-5 mb-5 mr-0 ml-0" type="submit" value="EXCLUIR" name="excluir" id="excluir">
 </div>
 </main>
 

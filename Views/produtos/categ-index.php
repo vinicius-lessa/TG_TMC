@@ -35,10 +35,11 @@ require SITE_PATH . '/Controllers/c_produto.php';
   <main class="min-h-75">
     <div class="container">
       <div class="row justify-content-md-center">
-        <h1>Categoria Produtos</h1>
+        <h1 class="font-weight-bold mt-3">Cadastrar e Alterar Categoria de Produtos</h1>
       </div>
-      <div class="row justify-content-md-center">
-        <a class="col-2 btn btn-block btn-adm my-2 text-light mt-4 mb-4 pt-2 pb-2" href="<?php echo SITE_URL ?>/Views/produtos/create-categ.php" role="button">Cadastrar Categoria</a>
+      <p class="font-weight-bold mt-2">CLIQUE AQUI PARA CADASTRAR NOVA CATEGORIA</p>
+      <div class="row">
+        <a class="col-4 font-weight-bold btn btn-block btn-adm my-2 mb-4 pt-2 pb-2" href="<?php echo SITE_URL ?>/Views/produtos/create-categ.php" role="button">Cadastrar Nova Categoria</a>
       </div>
       <div class="row justify-content-md-center">
         <table class="col-8 table text-center " style="width: 65%">

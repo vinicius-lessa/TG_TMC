@@ -18,7 +18,7 @@ $titlePage = "Cadastro de Clientes";
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
 
   <title>
-    Tcm.com | <?php echo $titlePage ;?>
+    Tmc.com | <?php echo $titlePage ;?>
   </title>
 </head>
 
@@ -26,21 +26,13 @@ $titlePage = "Cadastro de Clientes";
   <!-- menu do site -->
   <?php include SITE_PATH .'/includes/menu.php';?>
   <!--conteudo da pagina -->
-  <div class="principal-cadastro container mt-5">
-    <h2 class="caixa-cadastro">
-      <span>CADASTRE-SE</span>
+    <h2 class="caixa-cadastro font-weight-bold">
+      <span>CADASTRO</span>
     </h2>
-    <p class="paragrafo-cadastro">Crie uma conta rápido e fácil com a gente</p>
-    
-    <hr>
-    <div class="d-flex justify-content-center mt-5 mb-5">
-      <h3>Preencha o formulário abaixo</h3>
-    </div>
-  </div>
 
   <div class="container caixa-formulario efeito rounded d-flex justify-content-center">
-    <div class="row align-items-center">
-      <article class="mt-5 col-6">
+    <div class="row">
+      <article class="col-12">
         <form class="cadastroForm" action='<?php echo SITE_URL ?>/Controllers/c_cliente.php' method="post">
 
         <div class="form-group inputGroup">

@@ -39,10 +39,11 @@ require SITE_PATH . '/Controllers/c_usuario.php';
   <main class="min-h-75">
     <div class="container">
       <div class="row justify-content-md-center">
-        <h1 class="h3 pt-2">USUÁRIOS</h1>
+        <h1 class="h3 font-weight-bold pt-2">USUÁRIOS</h1>
       </div>
-      <div class="row justify-content-md-center">
-        <a class="col-2 btn btn-dark btn-adm my-2" href="<?php echo SITE_URL ?>/Views/adm/create.php" role="button">Cadastrar Usuário</a>
+      <div class="row">
+        <p class="col-12 font-weight-bold mt-3">CLIQUE AQUI PARA CADASTRAR NOVO USUÁRIO</p>
+        <a class="col-4 btn btn-dark btn-adm my-2" href="<?php echo SITE_URL ?>/Views/adm/create.php" role="button">Cadastrar Usuário</a>
       </div>
       <div class="row justify-content-md-center">
         <table class="table text-center " style="width: 70%">

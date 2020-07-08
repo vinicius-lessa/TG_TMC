@@ -47,7 +47,6 @@ $categorias = [];
           <div class="input-group d-flex justify-content-center">
             <input type="hidden" class="btn btn-dark btn-block">
             <input class="btn btn-dark btn-block btn-comprar mx-2 col-2" type="submit" value="Atualizar" name="alterar-categoria" id="alterar-categoria">
-            <input class="btn btn-dark btn-block btn-comprar mx-2 col-2" type="reset" value="Limpar" id="limpar">
             <a class="btn btn-dark btn-block btn-comprar mx-2 col-2" href="./categ-index.php">Cancelar</a>
           </div>
         </form>

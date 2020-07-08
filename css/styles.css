@@ -23,6 +23,10 @@ footer{
   background-color: #ce0000;
 }
 
+.bk-total{ /*ADICIONEI*/
+  background-color: #5f5f5f;
+}
+
 /*Fonte color*/
 .ft-laranja {
   color: #000000;
@@ -35,7 +39,7 @@ footer{
   color: #ffffff;
 }
 
-/*remover o subrinhado dos links */
+/*remover sublinhado*/
 a.link-none:link {
   text-decoration: none;
 }
@@ -54,7 +58,8 @@ a.link-none:link {
   padding: 0px;
   margin: 0px;
   width: 100%;
-  margin-top: 80px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 #lista-menu ul {
@@ -111,7 +116,7 @@ a.link-none:link {
 .input-search {
   height: 50px;
   border: none;
-  border-radius: 70px;
+  border-radius: 10px;
   width: 89%;
   padding-left: 10px;
   font-size: 16px;
@@ -125,20 +130,14 @@ a.link-none:link {
 
 /* estilos do botão lupa*/
 .btn-search {
-  color: #ff0000;
-  border: 2px solid #ff0000;
-  border-radius: 100%;
-  cursor: pointer;
-  outline: none;
-  width: 50px;
+  color: #ffffff;
+  border: 1px solid #ff0000;
+  background-color: #ff0000;
+  border-radius: 10%;
+  width: 70px;
   height: 50px;
   float: right;
-}
-
-.btn-search svg {
-  fill: #ff0000;
-  stroke: #ff0000;
-  stroke-width: 5;
+  margin-top: 38px;
 }
 
 /*opções do carrinho */
@@ -159,7 +158,7 @@ a.link-none:link {
 
 .menu-entrar {
   display: inline-block;
-  color: #dadada;
+  color: #ffffff;
 }
 
 .menu-entrar img {
@@ -250,9 +249,9 @@ img.img-cover {
 }
 
 .btn-comprar {
-  background-color: #ff0000;
-  color: #000000;
-  border: 1px solid #3c3d41;
+  background-color: #ff0000; /*MUDEI*/
+  color: #ffffff; /*MUDEI*/
+  border: 1px solid #ff0000; /*MUDEI*/
   transition: all 0.4s ease;
 }
 
@@ -392,11 +391,6 @@ img.img-detalhe {
 
 /* --------------PÁGINA CADASTRO CLIENTES --------------*/
 
-.principal-cadastro {
-  width: 100%;
-  height: 100px;
-}
-
 .caixa-cadastro {
   display: flex;
   justify-content: center;
@@ -405,7 +399,7 @@ img.img-detalhe {
 }
 
 .paragrafo-cadastro {
-  text-align: center;
+  /* text-align: center; */
   font-size: 14px;
   margin-bottom: 20px;
   color: #666;
@@ -413,7 +407,7 @@ img.img-detalhe {
 
 .divisor-cadastro {
   margin-top: 3rem;
-  text-align: center;
+  /* text-align: center; */
   background-image: linear-gradient(
     180deg,
     transparent 10px,
@@ -443,6 +437,9 @@ img.img-detalhe {
   border-color: #40cd28;
 }
 
+.bk-comen{
+  background-color: #0000002d;
+}
 .btn-success:hover {
   background-color: #ff0000;
   border-color: #ff0000;
@@ -450,7 +447,7 @@ img.img-detalhe {
 
 .display-cadastro {
   color: rgb(0, 0, 0);
-  padding-top: 25px;
+  /* padding-top: 25px; */
 }
 
 .caixa-formulario {
@@ -475,9 +472,9 @@ input:-internal-autofill-selected {
   color: #ffffff !important;
 }
 
-.btn-renata{
+.btn-r{ /*MUDEI*/
   background-color: #ff0000;
-  color: #20232c;
+  color: #ffffff; /*MUDEI*/
   border: 1px solid #20232c;
   border: 2px solid #ff0000;
 }
@@ -485,10 +482,10 @@ input:-internal-autofill-selected {
 /* --------------PAGINAS ADM--------------*/
 .btn-adm {
   background-color: #ff0000;
-  color: #20232c;
-  border: 1px solid #20232c;
+  color: #ffffff; /*MUDEI*/
+  border: 1px solid #ffffff; /*MUDEI*/
   transition: all 0.3s ease;
-  border-radius: 70px;
+  border-radius: 10px; /*MUDEI*/
   width: 50%;
   padding-left: 10px;
   font-size: 16px;
@@ -497,22 +494,22 @@ input:-internal-autofill-selected {
 
 .btn-adm-2 {
   background-color: #ff0000;
-  color: #20232c;
-  border: 1px solid #20232c;
-  transition: all 0.3s ease;
-  border-radius: 70px;
+  color: #ffffff; /*MUDEI*/
+  border: 1px solid #000000; /*MUDEI*/
+  transition: all 0.2s ease;
+  border-radius: 10px; /*MUDEI*/
   width: 100%;
   padding-left: 10px;
-  font-size: 16px;
+  font-size: 16px; /*MUDEI*/
   border: 2px solid #ff0000;
 }
 
 .btn-adm3 {
   background-color: #ff0000;
-  color: #20232c;
-  border: 1px solid #20232c;
+  color: #ffffff; /*MUDEI*/
+  border: 1px solid #000000; /*MUDEI*/
   transition: all 0.3s ease;
-  border-radius: 70px;
+  border-radius: 10px; /*MUDEI*/
   width: 36%;
   padding-left: 10px;
   font-size: 16px;
@@ -520,8 +517,8 @@ input:-internal-autofill-selected {
 }
 
 .quadro-sucess {
-  background-color: #ff0000;
-  border: 2px solid #20232c;
+  background-color: #ffffff; /*MUDEI*/
+  border: 2px solid #000000; /*MUDEI*/
   padding: 50px;
   margin: 100px;
   box-shadow: 4px 3px 6px 1px rgba(176, 176, 176, 1);
@@ -534,11 +531,11 @@ input:-internal-autofill-selected {
 
 .input-adm {
   border: none;
-  border-radius: 33px;
+  border-radius: 10px;
   width: 100%;
   padding-left: 10px;
-  font-size: 16px;
-  border: 2px solid #ff0000;
+  font-size: 16px; /*MUDEI*/
+  border: 2px solid #5f5f5f; /*MUDEI*/
 }
 
 .input-destaque {
@@ -559,7 +556,7 @@ input:-internal-autofill-selected {
 
 /*AJuste da pagina carrinho */
 .img-sacola {
-  max-width: 60px;
+  max-width: 50px;
 }
 
 .min-h-50 {
@@ -577,14 +574,11 @@ input:-internal-autofill-selected {
 
 .icone-carrinho {
   position: absolute;
-  right: 10px;
+  /* right: 10px; */
 }
 
 .bdg-carrinho {
   position: absolute;
-  right: 25%;
-  top: 30%;
-  transition: all 0.9ms linear;
 }
 
 .texto-carrosel h5,
@@ -614,15 +608,8 @@ input:-internal-autofill-selected {
   text-align: right !important;
 }
 
-.card-pedido {
-  font-size: 1.6rem;
-}
-.card-pedido p span {
-  font-size: 1.62rem;
-}
-
-.card-pedido img {
-  width: 180px;
+.letra-ver{
+  color: #ff0000;
 }
 
 #box-produto-shadow{

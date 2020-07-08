@@ -29,7 +29,7 @@ if (!defined('SITE_URL')) {
   <main class="min-h-50">
     <div class="container mt-5">
       <div class="row justify-content-md-center text-center">
-        <h1>Cadastrar novo Categoria</h1>
+        <h1>Cadastrar Nova Categoria</h1> <!--MUDEI-->
       </div>
       <div class="row justify-content-md-center mt-4">
         <div class="col-md-6">

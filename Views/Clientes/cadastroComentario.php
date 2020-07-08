@@ -59,22 +59,18 @@ $titlePage = "Adicionar Comentario";
               <option value="1">1-Ruim</option>
               <option value="2">2-Bom</option>
               <option value="3">4-Muito Bom</option>
-              <option value="4">5-Extraordinário</option>
+              <option value="4">5-Excelente</option>
             </select>
           </div>
           <div class="form-group mb-3">
             <label class="sr-only" for="comentario">Comentário</label>
             <textarea class="form-control input-adm" name="comentario" id="comentario" cols="49" rows="5"
                       aria-describedby="comentariohelp" placeholder="Escreva seu Comentário" required></textarea>
-            <small id="passwordHelpInline" class="text-right text-muted">
-              Comentário Maximo 255 caracteres.
-            </small>
           </div>
           <div class="d-flex justify-content-center">
             <input class="btn btn-dark btn-block " type="hidden">
             <input class="btn btn-dark btn-block btn-adm mx-2 col-3" type="submit" value="Avaliar"
                    name="AddComentario" id="AddComentario">
-            <input class="btn btn-dark btn-block btn-adm mx-2 col-3" type="reset" value="Limpar" id="limpar">
             <a class="btn btn-dark btn-block btn-adm mx-2 col-3"
                href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $cod_prod ?>">Cancelar</a>
           </div>
@@ -90,13 +86,6 @@ $titlePage = "Adicionar Comentario";
 <!-- footer site -->
 <?php include SITE_PATH . '/includes/footer.php'; ?>
 <script src="../../js/jquery-3.4.1.min.js"></script>
-<script>
-    
-    $('#limpar').click(function (e) {
-        $(this).attr('disabled', 'enable');
-        
-    })
-</script>
 </body>
 
 </html>

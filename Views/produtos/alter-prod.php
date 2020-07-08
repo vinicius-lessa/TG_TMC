@@ -114,7 +114,6 @@ $destaque0 = 0;
           <div class="input-group d-flex justify-content-center">
             <input type="hidden" class="btn btn-dark btn-block btn-adm">
             <input class="btn btn-dark btn-block btn-adm mx-2 col-3" type="submit" value="Alterar" name="alterar-produto" id="alterar-produto">
-            <input class="btn btn-dark btn-block btn-adm mx-2 col-3" type="reset" value="Limpar" id="limpar">
             <a class="btn btn-dark btn-block btn-adm mx-2 col-3" href="./prod-index.php">Cancelar</a>
           </div>
         </form>

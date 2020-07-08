@@ -26,7 +26,7 @@ session_destroy();
 
 <body>
   <!-- menu do site -->
-  <?php include SITE_PATH.'/includes/menu.php'; ?>
+  <?php include SITE_PATH.'/includes/menu-adm.php'; ?>
   <!--conteudo da pagina -->
 
   <div class="container col-8 mt-5 pt-3 pb-5 ">
@@ -79,7 +79,7 @@ session_destroy();
 
 
   <!-- footer site -->
-  <?php include SITE_PATH.'/includes/footer.php'; ?>
+  <?php include SITE_PATH.'/includes/footer-adm.php'; ?>
 </body>
 
 </html>

@@ -5,7 +5,7 @@
         <nav id="lista-footer" class="bk-preto">
           <ul>
             <li>
-              <a class="border-button ft-escuro mt-3" href="<?php echo SITE_URL ?>/Views/home/index.php">
+              <a class="border-button ft-escuro font-weight-bold mt-3" href="<?php echo SITE_URL ?>/Views/home/index.php">
                 <span><img class="ml-3" src="<?php echo SITE_URL ?>/images/logo.png"></span><strong>Tmc.com</strong>
               </a>
             </li>
@@ -19,7 +19,8 @@
     </div>
     <div class="row">
       <div class="col text-center">
-        <p><small>2020 - Desenvolvido por Vinícius Lessa da Silva - TMC - Trade Music Center</small></p>
+        <!--ALTEREI-->
+        <p><small>2020 - Desenvolvido por Anderson Nascimento e Vinicius Lessa da Silva - TMC - Trade Music Center</small></p>
       </div>
     </div>
   </div>

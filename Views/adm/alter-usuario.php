@@ -30,14 +30,14 @@ $id_usuario    = $_GET['usuario'];
 <body>
   <?php require SITE_PATH . '/includes/menu-adm.php'; ?>
   <div class="container col-8 mt-5 pt-3 pb-5 ">
-    <div class="row justify-content-md-center text-center ">
+    <div class="row justify-content-md-center text-center">
       <h1>Alterar Usuario: <?php echo $alter_usuario; ?></h1>
     </div>
     <div class="row justify-content-md-center mt-3">
       <div class="col-md-6">
         <form action='<?php echo SITE_URL ?>/Controllers/c_usuario.php' method="post">
           <div class="form-group mb-3">
-            <label for="log">log:</label>
+            <label for="log">Usuário:</label>
             <input class="form-control input-adm" type="text" name="log" placeholder="Novo Log" value="<?php echo $alter_usuario; ?>">
             <input class="form-control input-adm" type="hidden" name="cod_usuario" value="<?php echo $id_usuario; ?>">
 
@@ -55,7 +55,6 @@ $id_usuario    = $_GET['usuario'];
           <div class="d-flex justify-content-center">
             <input class="btn btn-dark btn-block " type="hidden">
             <input class="btn btn-dark btn-block btn-adm mx-2 col-3" type="submit" value="Alterar" name="alterar-usuario" id="alterar-usuario">
-            <input class="btn btn-dark btn-block btn-adm mx-2 col-3" type="reset" value="Limpar" id="limpar">
             <a class="btn btn-dark btn-block btn-adm mx-2 col-3" href="./index.php">Cancelar</a>
           </div>
         </form>

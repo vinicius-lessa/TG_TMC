@@ -28,33 +28,32 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
   <title>
-    Tcm.com | <?php echo $titlePage; ?>
+    Tmc.com | <?php echo $titlePage; ?>
   </title>
 </head>
 
 <body>
+    <!-- menu do site -->
+    <?php include SITE_PATH . '/includes/menu.php';?>
   <main id="bg-finalizado">
     <section>
       <div class="d-flex justify-content-center">
-        <div class="card-pedido bk-escuro ft-branca mt-md-2 px-5 py-2 rounded shadow  align-items-center">
+        <div class="card-pedido font-weight-bold mt-md-2 px-5 py-2 rounded shadow align-items-center">
           <a href="<?php echo SITE_URL ?>/Views/home/index.php"> <img class="mx-auto d-block" src="<?php echo SITE_URL ?>/images/logo.png" alt="Logo Loja"><a>
-          <h1 class="text-center mb-4 py-4 ft-laranja ">Pedido nº <?php echo $PedidoCriado['cod_pedido'] ?>
+          <h1 class="text-center font-weight-bold mb-4 py-4">Pedido nº <?php echo $PedidoCriado['cod_pedido'] ?>
           </h1>
-          <p>Obrigado <span class="ft-laranja"><?php echo $PedidoCriado['nome_cliente'] ?></span>,
+          <p>Obrigado <span class="letra-ver"><?php echo $PedidoCriado['nome_cliente'] ?></span>,
           </p>
-          <p>seu pedido no valor de <span class="ft-laranja ">R$
+          <p>sua compra no valor de <span class="letra-ver">R$
               <?php echo number_format($PedidoCriado['valor_pedido'], 2, ',', '') ?></span>
-            foi efetuado com Sucesso!</p>
-          <p>A entrega esta programada até <span class="ft-laranja ">
+            foi efetuada com Sucesso!</p>
+          <p>Sua compra chegará dia <span class="letra-ver">
               <?php
                 $dataEntrega = date("Y/m/d");
                 echo $dataEntrega;
               ?>
             </span></p>
-          <p><small>Para qualquer dúvida estaremos à disposição para maiores esclarecimentos.</small> </p>
-          <p class="text-right">Equipe <span class="ft-laranja ">Loja</span></p>
-          <p class="text-right "><small><a class="ft-branca" href="<?php echo SITE_URL ?>/Views/home/index.php">Voltar
-                a Loja</a></small></p>
+          <h5 class="text-right "><small><a href="<?php echo SITE_URL ?>/Views/home/index.php">Clique Aqui para Voltar ao Site</a></small></h5>
 
         </div>
       </div>
@@ -62,7 +61,8 @@
 
 
   </main>
-
+  <!-- footer site -->
+  <?php include SITE_PATH . '/includes/footer.php';?>
 </body>
 
 </html>

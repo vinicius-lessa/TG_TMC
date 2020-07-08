@@ -36,7 +36,7 @@
         <div class="col-md-6 d-flex justify-content-center">
           <form action='<?php echo SITE_URL ?>/Controllers/c_alterarCliente.php?cod_cliente=<?php echo $cod_cliente; ?>' method="post">
             <div class="input-group d-flex justify-content-center m-4">
-              <h5>Deseja realmente este Cliente ?</h5>  
+              <h5>Deseja realmente DELETAR este Cliente ?</h5>  
             </div> 
             <div style="display:none;">
                 <label for="telefone_cliente">Modo Admin</label>

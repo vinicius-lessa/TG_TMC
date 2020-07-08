@@ -26,10 +26,10 @@ $conf = require '../../config.php';
   <!--conteudo da pagina -->
 
 <div class="container">
-    <div class="row justify-content-md-center mt-5 ">
+    <div class="row justify-content-md-center">
       <div class="col-md-4 mt-md-5">
-        <form class="mt-5 px-md-3" action='<?php echo SITE_URL ?>/Controllers/c_cliente.php' method="post">
-          <h1 class="h3 mb-3 font-weight-normal text-center mb-5">Acesse a sua conta</h1>
+        <form class="mt-2 px-md-3" action='<?php echo SITE_URL ?>/Controllers/c_cliente.php' method="post">
+          <h1 class="h3 mb-3 font-weight-bold text-center mb-5">Acesse a sua conta</h1>
           <label for="login_user" class="sr-only">Usuario</label>
           <input type="text" id="login_user" class="form-control box-search input-adm mb-2" name="email" placeholder="E-mail"
             autofocus required>

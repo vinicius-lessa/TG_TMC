@@ -33,7 +33,7 @@
 <body>
   <div class="container mt-5">
     <div class="row justify-content-md-center text-center">
-      <h1>Cadastrar novo Produto</h1>
+      <h1>Cadastrar Novo Produto</h1> <!--MUDEI-->
     </div>
     <div class="row justify-content-md-center mt-3">
       <div class="col-md-6">

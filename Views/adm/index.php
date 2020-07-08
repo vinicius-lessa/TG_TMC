@@ -31,9 +31,9 @@ session_destroy();
   <!--conteudo da pagina -->
   <div class="container">
     <div class="row justify-content-md-center mt-5 ">
-      <div class="col-md-4 mt-md-5 rounded py-5 px-4 ">
+      <div class="col-md-4 mt-md-2 rounded py-5 px-4 "> <!--MUDEI-->
         <form class="mt-n3 px-3" action='<?php echo SITE_URL ?>/Controllers/c_usuario.php' method="post">
-          <h1 class="h4 font-weight- text-center ft-laranja"><strong>ADMINISTRAÇÃO</strong></h1>
+          <h1 class="h4 font-weight- text-center ft-laranja mb-5"><strong>ADMINISTRAÇÃO</strong></h1>
           <label for="log_usuario" class="sr-only">Usuário</label>
           <input type="text" id="log" class="form-control mb-2 input-adm" name="log" placeholder="Usuário" autofocus>
           <label for="senha" class="sr-only">Senha</label>

@@ -29,17 +29,21 @@ $titlePage = 'ADM Tmc.com'
 <body>
   <?php require SITE_PATH . '/includes/menu-adm.php'; ?>
   <main class="min-h-50">
+  <h2 class="text-center font-weight-bold mb-2 mt-3">ADMINISTRATIVO</h2> <!--MUDEI-->
     <div class="container">
-      <div class="row justify-content-md-center mt-3 ">
-        <div class="col-md-4 mt-md-5">
-          <a class="btn btn-dark btn-block btn-adm-2 py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/produtos/prod-index.php"><strong class="h5">PRODUTOS</strong></a>
-          <a class="btn btn-dark btn-block btn-adm-2 py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/produtos/categ-index.php"><strong class="h5">CATEGORIAS</strong></a>
-          <a class="btn btn-dark btn-block btn-adm-2 py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/adm/usuarios.php"><strong class="h5">USUÁRIOS</strong></a>
-          <a class="btn btn-dark btn-block btn-adm-2 py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/adm/adm-alterarCliente.php"><strong class="h5">CLIENTES</strong></a>
+      <div class="row mt-5">
+        <div class="col-6 mt-5">
+          <h3 class="text-center font-weight-bold mb-2">LOJA</h3> <!--MUDEI-->
+          <a class="btn btn-dark btn-block btn-adm-2 font-weight-bold py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/produtos/prod-index.php"><strong class="h5">PRODUTOS</strong></a>
+          <a class="btn btn-dark btn-block btn-adm-2 font-weight-bold py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/produtos/categ-index.php"><strong class="h5">CATEGORIAS</strong></a>
+        </div>
+          <div class="col-6 mt-5">
+          <h3 class="text-center font-weight-bold mb-2">LOGINS</h3> <!--MUDEI-->
+          <a class="btn btn-dark btn-block btn-adm-2 font-weight-bold py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/adm/usuarios.php"><strong class="h5">USUÁRIOS</strong></a>
+          <a class="btn btn-dark btn-block btn-adm-2 font-weight-bold py-4 my-3 col align-self-center" href="<?php echo SITE_URL ?>/Views/adm/adm-alterarCliente.php"><strong class="h5">CLIENTES</strong></a>
         </div>
       </div>
     </div>
-
   </main>
   <?php require SITE_PATH . '/includes/footer-adm.php'; ?>
 </body>
