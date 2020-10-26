@@ -77,7 +77,7 @@ if ($listaTodosProdutos) {?>
                   src="<?php echo SITE_URL ?>/images/produtos/<?php echo $produto['cover_img'] ?>"
                   alt="Cover: <?php echo $produto['nome_prod'] ?>">
                 <div class="card-body">
-                  <p class="card-text mt-n3"><small class="text-muted">Por Apenas</small></p>
+                  <p class="card-text mt-n3"><small class="text-muted">À Vista</small></p>
                   <p class="card-text h2 font-weight-bold"><small>R$
                     </small><?php echo number_format($produto['valor_un'], 2, ',', '.') ?>
                   </p>

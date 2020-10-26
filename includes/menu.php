@@ -11,38 +11,42 @@
 <header class="menu-principal bk-preto mb-4">
   <div class="container-fluid pt-3 pl-2 pr-3">
     <div class="row">
-      <div class="col-md-4">
-        <a href="<?php echo SITE_URL ?>/Views/home/index.php"><img id="icon-logo"
-            src="<?php echo SITE_URL ?>/images/produtos/logotipo.png" alt="Logo do site"></a>
+      <div class="col-md-3">
       </div>
 
-<!--PESQUISA PRODUTOS-->
-      <div class="col-md-4">
-        <form class="box-search bk-esc" action="<?php echo SITE_URL ?>/Views/produtos/todos.php" method="get">
-          <div class="row">
-            <div class="col-11 p-0 m-0">
-              <h4 class="menu-entrar font-weight-bold">Pesquisa de Produtos</h4>
-              <input class="input-search bk-esc" type="search" name="pesquisa" id="pesquisa" placeholder="Digite aqui o que procura">
-            </div>
-            <div class="col-1">
-              <span>
-                <button class="btn-search font-weight-bold" type="submit">IR</button>
-              </span>
-            </div>
-          </div>
-        </form>
+
+      <!--MENU PRINCIPAL-->
+      <!-- <div class="row"> -->
+      <div class="col-md-6">
+        <nav id="lista-menu">
+          <ul>
+            <li>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/todos.php">Anúncios</a>
+            </li>
+            <li>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/violao.php">Feed Musical</a>
+            </li>
+            <li>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/guitarra.php">Music Trade</a>
+            </li>
+            <li>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/bateria.php">Anunciar</a>
+            </li>
+          </ul>
+        </nav>
       </div>
+    <!-- </div> -->
 
 
       <!--TELA DE LOGIN E LOGOUT-->
-      <div class="col-md-3 text-right">
+      <div class="menu-entrar col-md-3 text-right">
       <?php
         // Caso esteja LOGADO
         if (isset($_SESSION['nome_cliente'])) {
         $nomeCliente = explode(" ", $_SESSION['nome_cliente']);?>
         <!-- Editar Perfil -->
+        <i class="fas fa-user-check fa-3x"></i>
         <a href="<?php echo SITE_URL ?>/Views/Clientes/alterarCliente.php">
-          <img title="editar perfil" class="circle-rounded" id="icone-user" src="<?php echo SITE_URL ?>/images/produtos/cliente.png" alt="">
         </a>
         
         <div class="menu-entrar">
@@ -56,64 +60,52 @@
           </div>
           <?php
           } else { ?>
-          <img id="icone-user" src="<?php echo SITE_URL ?>/images/icones/utilizador.svg" alt="">
+
+          <!-- CONTATO -->
           <div class="menu-entrar font-weight-bold">
             <ul class="text-left">
-              <li><a href="<?php echo SITE_URL ?>/Views/Clientes/loginCliente.php">Entrar</a>
+              <li>
+              <a href="<?php echo SITE_URL ?>/Views/Home/sobreNos.php"><i class="fas fa-envelope fa-2x ml-3"></i></a>
               </li>
-              <li><a href="<?php echo SITE_URL ?>/Views/Clientes/cadastroClientes.php">Cadastrar</a>
+              <li class="ml-1">
+              <a href="<?php echo SITE_URL ?>/Views/Home/sobreNos.php">Contato</a>
               </li>
             </ul>
           </div>
+
+          <!-- CADASTRE-SE -->
+          <div class="menu-entrar font-weight-bold">
+            <ul class="text-left">
+              <li>
+              <a href="<?php echo SITE_URL ?>/Views/Clientes/cadastroClientes.php"><i class="fas fa-user-friends fa-2x ml-4"></i></a>
+              </li>
+              <li class="">
+              <a href="<?php echo SITE_URL ?>/Views/Clientes/cadastroClientes.php">Cadastre-se</a>
+              </li>
+            </ul>
+          </div>
+
+          <!-- LOGIN -->
+          <div class="menu-entrar font-weight-bold">
+            <ul class="text-left">
+              <li>
+              <a href="<?php echo SITE_URL ?>/Views/Clientes/loginCliente.php"><i class="fas fa-sign-in-alt fa-2x ml-3"></i></a>
+              </li>
+              <li class="ml-3">
+              <a href="<?php echo SITE_URL ?>/Views/Clientes/loginCliente.php">Login</a>
+              </li>
+            </ul>
+          </div>
+
           <?php }?>
-        </div>
-
-      <!--ITENS CARRINHO-->
-      <div class="col-md-1 text-right">
-        <div class="carrinho">
-          <a class="text-right" href="<?php echo SITE_URL ?>/Views/pedidos/carrinho.php" title="Meu Carrinho">
-            <div class="icone-carrinho">
-              <?php
-              if ($itPendentes) {
-                  echo "<span class='badge badge-light bdg-carrinho'>$itPendentes</span>";
-              }?>
-              <img class="img-sacola" src="<?php echo SITE_URL ?>/images/produtos/carrinho.png" alt="Meu Carrinho">
-            </div>
-          </a>
-        </div>
-      </div>
-    </div>
-
-      <!--MENU PRINCIPAL-->
-      <div class="row">
-      <div class="col-12 mt-4">
-        <nav id="lista-menu">
-          <ul>
-            <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/home/index.php"><span><img
-                    src="<?php echo SITE_URL ?>/images/icones/home.svg" alt=""></span>Home</a>
-            </li>
-            <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/violao.php"><span><img
-                    src="<?php echo SITE_URL ?>/images/" alt=""></span>Violão</a>
-            </li>
-            <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/guitarra.php"><span><img
-                    src="<?php echo SITE_URL ?>/images/" alt=""></span>Guitarra</a>
-            </li>
-            <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/bateria.php"><span><img
-                    src="<?php echo SITE_URL ?>/images/" alt=""></span>Bateria</a>
-            </li>
-            <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/todos.php"><span><img
-                    src="<?php echo SITE_URL ?>/images" alt=""></span>Todos</a>
-            </li>
-          </ul>
-        </nav>
-      </div>
-    </div>
-
+          </div>
     
   </div>
 </header>
+
+<div class="row">
+  <div class="col-md-12">
+    <a href="<?php echo SITE_URL ?>/Views/home/index.php"><img id="logo-header"
+      src="<?php echo SITE_URL ?>/images/logo.png" alt="Logo do site"></a>
+  </div>
+</div>

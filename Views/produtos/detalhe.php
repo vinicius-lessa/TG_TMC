@@ -57,7 +57,7 @@
                   <?php echo $infoProduto['nome_prod']?>
                 </h1>
                 <h5>Categoria: <?php echo $infoProduto['nome_categoria']?></h5>
-                  <p class="card-text pt-2"><small class="text-muted">Por Apenas</small></p>
+                  <p class="card-text pt-2"><small class="text-muted">À Vista</small></p>
                   <p class="card-text h2 mt-n3 ft-laranja"><small>R$</small>
                     <?php echo number_format($infoProduto['valor_un'], 2, ',', '.') ?>
                   </p>

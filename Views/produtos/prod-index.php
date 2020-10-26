@@ -59,7 +59,7 @@ require SITE_PATH . '/Controllers/c_produto.php';
                   <?php echo $linha['cod_produto'] ?>
                 </td>
                 <td>
-                    <?php echo $linha['nome_prod'] ?>
+                  <?php echo $linha['nome_prod'] ?>
                 </td>
                 <td>
                   <?php echo $linha['nome_categoria'] ?>
