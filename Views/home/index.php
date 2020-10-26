@@ -29,6 +29,7 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
   <link rel="icon" href="<?php echo SITE_URL ?>/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
   <title>
     Tmc.com | <?php echo $titlePage; ?>
   </title>
@@ -37,62 +38,113 @@
 <body>
 <!-- menu do site -->
 <?php include SITE_PATH . '/includes/menu.php'; ?>
+
 <!--conteudo da pagina -->
-<section class="destaques">
-  <h2 class="font-weight-bold text-center">DESTAQUES DE PRODUTOS</h2>
-  <div id="carroselDestaques" class="carousel slide" data-ride="carousel">
-    <ol class="carousel-indicators">
-      <li data-target="#carroselDestaques" data-slide-to="0" class="active"></li>
-      <?php
-      foreach ($itensCarrosel as $itemLista) {
-        $data_slide++ ?>
-        <li data-target="#carroselDestaques" data-slide-to="<?php echo $data_slide ?>"></li>
-        <?php
-      } ?>
-    </ol>
-    <div id="listaItensCarrosel" class="fundo-carrosel carousel-inner">
-      <!-- item padrão do site -->
-      <div class="carousel-item active">
-        <div class="carousel-caption d-none d-md-block texto-carrosel">
-          <h5 class="">Os Melhores Instrumentos</h5>
-          <p>Você só encontra aqui no TMC - Trade Music Center</p>
-        </div>
-      </div>
-      <!-- itens de produtos -->
-      <?php foreach ($itensCarrosel as $itemLista) { ?>
-        <div class="carousel-item"
-             style="background-image: url('<?php echo SITE_URL ?>/images/produtos/<?php echo $itemLista['banner_img'] ?>');">
-          <div class="carousel-caption d-md-block texto-carrosel">
-            <h5 class="ft-laranja"><?php echo $itemLista['nome_prod'] ?>
-            </h5>
-            <p><?php echo $itemLista['descricao_prod'] ?>
-            </p>
-            <a href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $itemLista['cod_produto'] ?>"
-               class="btn btn-outline-dark">Confira</a>
+<main class="min-h-60 mx-4">
+  <article>
+    <div class="container">
+      <div class="row">
+        <div class="col-md">
+
+<!-- PESQUISA -->
+<section>
+<div class="container">
+  <div class="row">
+    <div class="col-md-3">
+      <h4 class="cor-letras font-weight-bold">Busca</h4>
+    <!--PESQUISA PRODUTOS-->
+      <form class="box-search ml-3" action="<?php echo SITE_URL ?>/Views/produtos/todos.php" method="get">
+        <div class="form-row">  
+          <div class="row">
+              <input class="form-control" type="search" name="pesquisa" id="pesquisa" placeholder="Digite aqui o que procura">
           </div>
         </div>
+      </form>
 
-      <?php } ?>
+      <div class="row">
+      <h4 class="cor-letras font-weight-bold ml-3">Filtros</h4>
+      </div>
 
-    </div>
-    <!-- controle do carrosel  -->
-    <a class="carousel-control-prev" href="#carroselDestaques" role="button" data-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      <span class="sr-only">Anterior</span>
-    </a>
-    <a class="carousel-control-next" href="#carroselDestaques" role="button" data-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      <span class="sr-only">Próximo</span>
-    </a>
-  </div>
-</section>
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Guitarras</label>
+        </div>
+      </div>
 
-<!-- section de Destaques -->
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Violões</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Teclados</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Contra Baixo</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Pedaleiras</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Pedais</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Baterias</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Amplificadores</label>
+        </div>
+      </div>
+
+      <div class="row ml-1">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" value="" id="defaultCheck1">
+            <label class="form-check-label" for="defaultCheck1">Microfones</label>
+        </div>
+      </div>
+      </div>
+
+    <!-- LINHA SEPARATÓRIO VERTICAL -->
+    <!-- <div class="vl"></div> -->
+
+    <!-- ANUNCIOS -->
+    <div class="col-md-8 ml-4 mt-3">
+    <h1 class="cor-letras">Anúncios Recentes</h1>
+
+    <!-- LINHA SEPARATÓRIO HORIZONTAL -->
+    <hr></hr>
+
+<!-- CONTEÚDO DA PÁGINA DE BUSCA -->
 <section>
     <?php if ($listaSugestao) { ?>
       <div class="row justify-content-center">
         <?php foreach ($listaSugestao as $itemSugestao) { ?>
-          <div class="col-sm-3 col-10 mt-2">
+          <div class="col-sm-6 col-12 mt-2">
             <a href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $itemSugestao['cod_produto'] ?>"
                class="linkCardsVioloes">
               <div class="card text-center border-0 card-produto">
@@ -107,7 +159,7 @@
                      src="<?php echo SITE_URL ?>/images/produtos/<?php echo $itemSugestao['cover_img'] ?>"
                      alt="Cover: <?php echo $itemSugestao['nome_prod'] ?>">
                 <div class="card-body">
-                  <p class="card-text mt-n3"><small class="text-muted">Por Apenas</small></p>
+                  <p class="card-text mt-n3"><small class="text-muted">À Vista</small></p>
                   <p class="card-text h2 font-weight-bold"><small>R$
                     </small><?php echo number_format($itemSugestao['valor_un'], 2, ',', '.') ?>
                   </p>
@@ -124,11 +176,23 @@
       </div>
 
     <?php } else {
-      /*Carregar a pagina de erro quando não tiver produto cadastrado*/
+      /*Carregar a pagina de erro quando nÃ£o tiver produto cadastrado*/
       include SITE_PATH . '/includes/erroCarregarProduto.php';
     } ?>
   </div>
 </section>
+
+    </div>
+  </div>
+</div>
+</section>
+
+        </div>
+      </div>
+    </div>
+  </article>
+</main>
+
 
 <!-- footer site -->
 <?php include SITE_PATH . '/includes/footer.php'; ?>

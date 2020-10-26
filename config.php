@@ -1,6 +1,6 @@
 <?php
 
-$dir = "/FATEC/4_SEMESTRE/Tmc.com/";
+$dir = "/FATEC/4_SEMESTRE/TG_TMC_DESKTOP/";
 
 define('DS', DIRECTORY_SEPARATOR);
 define('ROOT', $_SERVER['DOCUMENT_ROOT']);
