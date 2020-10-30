@@ -12,16 +12,16 @@ if (!defined('SITE_URL')) {
 if (session_status() === PHP_SESSION_NONE) {
     session_start();
 }
-$listaBaterias = [];
-$codCategoria = 3;
-$limit = 12; /** quantidade de baterias por pg */
+$listaVioloes = [];
+$codCategoria = 1;
+$limit = 12; /** quantidade de produto por pg */
 $Nextpg = (isset($_GET['page'])) ? ($_GET['page'] + 1) : 1;
 $Prevpg = (isset($_GET['page']) && $Nextpg > 1) ? ($_GET['page'] - 1) : 0;
 $offset = (isset($_GET['page'])) ? ($_GET['page'] * $limit) : 0;
 
 require SITE_PATH . '/Controllers/c_produto.php';
 
-$titlePage = "Baterias";
+$titlePage = "Violões";
 
 ?>
 <!DOCTYPE html>
@@ -33,6 +33,7 @@ $titlePage = "Baterias";
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
   <title>
     Tmc.com | <?php echo $titlePage; ?>
@@ -43,24 +44,24 @@ $titlePage = "Baterias";
   <!-- menu do site -->
   <?php include SITE_PATH . '/includes/menu.php';?>
   <!--conteudo da pagina -->
-  <div>
+
+  <!-- header da pagina -->
+  <header>
     <div class="">
-      <div class="caixa-bateria">
-        <h1 class="display-bateria">Baterias</h1>
-        <h4 class="display-bateria-2">Aqui você encontra todas as baterias que procura!</h4>
+      <div class="caixa-violoes">
+        <h1 class="">Feed Musical</h1>
+        <h4 class="">EM CRIAÇÃO</h4>
       </div>
     </div>
-  </div>
-
-  <!-- section com a lista dos produto  -->
+  </header>
   <main>
-    <!-- section com a lista dos produtos  -->
+    <!-- section com o FEED MUSICAL  -->
     <section>
       <div class="container mt-5">
       <?php
-if ($listaBaterias) {?>
+if ($listaVioloes) {?>
         <div class="row">
-          <?php foreach ($listaBaterias as $produto) {?>
+          <?php foreach ($listaVioloes as $produto) {?>
           <div class="col-sm-3 mb-3">
             <a href="<?php echo SITE_URL ?>/Views/produtos/detalhe.php?produto=<?php echo $produto['cod_produto'] ?>"
               class="linkCardsVioloes">
@@ -102,12 +103,12 @@ if ($listaBaterias) {?>
         <li class="page-item <?php if ($Nextpg == 1) {
     echo 'disabled';
 }?>">
-          <a class="page-link bk-escuro ft-branca" href="./bateria.php?page=<?php echo $Prevpg ?>">Anterior</a>
+          <a class="page-link bk-escuro ft-branca" href="./violao.php?page=<?php echo $Prevpg ?>">Anterior</a>
         </li>
-        <li class="page-item <?php if (count($listaBaterias) < $limit) {
+        <li class="page-item <?php if (count($listaVioloes) < $limit) {
     echo 'disabled';
 }?>">
-          <a class="page-link bk-escuro ft-branca" href="./bateria.php?page=<?php echo $Nextpg ?>">Próximo</a>
+          <a class="page-link bk-escuro ft-branca" href="./violao.php?page=<?php echo $Nextpg ?>">Próximo</a>
         </li>
       </ul>
     </nav>

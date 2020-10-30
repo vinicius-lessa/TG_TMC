@@ -12,6 +12,7 @@
   $titlePage = "Cadastrar Produto";
   $selectgenero = [];
   $selectcategoria = [];
+  
 
   require SITE_PATH . '/Controllers/c_produto.php';
 ?>
@@ -27,11 +28,15 @@
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
-  <title><?php $titlePage;?></title>
+  <title>
+    Tmc.com | <?php echo $titlePage; ?>
+  </title>
 </head>
-<?php require SITE_PATH . '/includes/menu-adm.php';?>
 
 <body>
+    <!-- Nav -->
+    <?php include SITE_PATH . '/includes/menu.php'; ?>
+
   <div class="container mt-5">
     <div class="row justify-content-md-center text-center">
       <h1>Cadastrar Novo Produto</h1> <!--MUDEI-->
@@ -48,12 +53,20 @@
             <input class="form-control input-adm" type="text" name="descricao_prod" placeholder="Descrição do Produto">
           </div>
           <div class="form-group mb-3">
-            <label for="valor_un">Valor do Produto:</label>
-            <input class="form-control input-adm" type="text" name="valor_un" placeholder="Valor R$">
+            <label for="descricao_prod">Tipo</label>
+            <input class="form-control input-adm" type="text" name="tipo_prod" placeholder="Tipo do Produto">
           </div>
           <div class="form-group mb-3">
-            <label for="data-lacamento">Data de lançamento:</label>
-            <input class="form-control input-adm" type="date" name="data_lancamento">
+            <label for="descricao_prod">Modelo</label>
+            <input class="form-control input-adm" type="text" name="modelo_prod" placeholder="Modelo do Produto">
+          </div>
+          <div class="form-group mb-3">
+            <label for="descricao_prod">Localização</label>
+            <input class="form-control input-adm" type="text" name="localizacao_prod" placeholder="Localização do Produto">
+          </div>
+          <div class="form-group mb-3">
+            <label for="valor_un">Valor do Produto:</label>
+            <input class="form-control input-adm" type="text" name="valor_un" placeholder="Valor R$">
           </div>
           <div class="form-group mb-3">
             <label for="cover_img">Imagem do Produto:</label>
@@ -77,7 +90,7 @@
           <div class="form-group  mb-3">
             <label for="categoria">Categoria</label>
             <select class="form-control input-adm" name="cod_categoria" id="cod_categoria">
-              <option value="">Selecione Categoria</option>
+              <option value="">Selecione a Categoria</option>
               <?php foreach ($selectcategoria as $itemcategoria) {?>
                 <option value="<?php echo $itemcategoria['cod_categoria'] ?>"><?php echo $itemcategoria['nome_categoria'] ?></option>
               <?php };?>
@@ -94,7 +107,8 @@
       </div>
     </div>
   </div>
-</body>
-<?php require SITE_PATH . '/includes/footer-adm.php';?>
 
+      <!-- footer site -->
+      <?php include SITE_PATH . '/includes/footer.php'; ?>
+</body>
 </html>

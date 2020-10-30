@@ -1,0 +1,5 @@
+ALTER TABLE produto ADD tipo_prod VARCHAR(20)
+
+ALTER TABLE produto ADD modelo_prod VARCHAR(20)
+
+ALTER TABLE produto ADD localizacao_prod VARCHAR(20)
