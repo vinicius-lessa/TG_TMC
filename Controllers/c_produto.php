@@ -129,7 +129,7 @@ if (isset($_POST['cadastrar-produto'])) {
   $dados['banner_img'] = $nomebanner;
 
     if (cadastarproduto($dados, $conn)) {
-        header("location:" . SITE_URL . "/Views/produtos/prod-index.php");
+        header("location:" . SITE_URL . "/Views/produtos/cadastrado-sucesso.php");
     } else {
         echo 'Erro para cadastrar dado no Banco';
     }

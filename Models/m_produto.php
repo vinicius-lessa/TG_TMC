@@ -9,7 +9,7 @@ Since: 2020/06/19
 function listarProduto($produto, $conn)
 {
   $sql = "SELECT  p.cod_produto, p.nome_prod, p.descricao_prod, p.cover_img,p.banner_img, p.valor_un,  
-  p.estoque, c.nome_categoria FROM produto p INNER JOIN categoria c ON p.cod_categoria = c.cod_categoria
+  p.estoque, p.tipo_prod, p.modelo_prod, p.localizacao_prod, c.nome_categoria FROM produto p INNER JOIN categoria c ON p.cod_categoria = c.cod_categoria
   WHERE p.cod_produto = ?";
 
   $stmt = $conn->prepare($sql);
@@ -110,9 +110,9 @@ function selectcategoria($conn)
 function cadastarproduto($dados, $conn)
 {
   $valores = $dados;
-  $sql = 'INSERT INTO produto (nome_prod, descricao_prod, valor_un, cover_img, banner_img, estoque, cod_categoria, destaque) VALUES(?,?,?,?,?,?,?,?)';
+  $sql = 'INSERT INTO produto (nome_prod, descricao_prod, valor_un, cover_img, banner_img, estoque, cod_categoria, destaque, tipo_prod, modelo_prod, localizacao_prod) VALUES(?,?,?,?,?,?,?,?,?,?,?)';
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("ssdssiii", $valores['nome_prod'], $valores['descricao_prod'], $valores['valor_un'], $valores['cover_img'], $valores['banner_img'], $valores['estoque'], $valores['cod_categoria'], $valores['destaque']);
+  $stmt->bind_param("ssdssiiisss", $valores['nome_prod'], $valores['descricao_prod'], $valores['valor_un'], $valores['cover_img'], $valores['banner_img'], $valores['estoque'], $valores['cod_categoria'], $valores['destaque'], $valores['tipo_prod'], $valores['modelo_prod'], $valores['localizacao_prod']);
   // $stmt->execute();
   $result = $stmt->execute() ? true : false;
   $stmt->close();
@@ -163,7 +163,7 @@ function alterpegarExtensão($nome)
 /* FUNÇÃO PARA FAZER O SELECT QUE VAI CARREGAR OS DADOS "VIA $_GET" PARA ALTERAÇÃO/DELEÇÃO DO PRODUTO */
 function selectalterarproduto($conn, $cod_produto)
 {
-  $sql = "SELECT p.nome_prod, p.descricao_prod, p.valor_un, p.cover_img, p.banner_img, p.estoque, c.cod_categoria, p.destaque
+  $sql = "SELECT p.nome_prod, p.descricao_prod, p.valor_un, p.cover_img, p.banner_img, p.estoque, c.cod_categoria, p.destaque, p.tipo_prod, p.modelo_prod, p.localizacao_prod
     FROM produto p INNER JOIN categoria c ON p.cod_categoria = c.cod_categoria WHERE p.cod_produto = ?";
   $stmt = $conn->prepare($sql);
   $stmt->bind_param("i", $cod_produto);
@@ -177,9 +177,9 @@ function selectalterarproduto($conn, $cod_produto)
 
 function alterarproduto($conn, $dados)
 {
-  $sql = 'UPDATE produto SET nome_prod = ? , descricao_prod = ?, valor_un = ?, cover_img = ?, banner_img = ?, estoque = ?, cod_categoria = ?, destaque = ? WHERE cod_produto = ?';
+  $sql = 'UPDATE produto SET nome_prod = ? , descricao_prod = ?, valor_un = ?, cover_img = ?, banner_img = ?, estoque = ?, cod_categoria = ?, destaque = ?, tipo_prod = ?, modelo_prod = ?, localizacao_prod = ? WHERE cod_produto = ?';
   $stmt = $conn->prepare($sql);
-  $stmt->bind_param("ssdssiiii", $dados['nome_prod'], $dados['descricao_prod'], $dados['valor_un'], $dados['cover_img'], $dados['banner_img'], $dados['estoque'], $dados['cod_categoria'], $dados['destaque'], $dados['cod_produto']);
+  $stmt->bind_param("ssdssiiiisss", $dados['nome_prod'], $dados['descricao_prod'], $dados['valor_un'], $dados['cover_img'], $dados['banner_img'], $dados['estoque'], $dados['cod_categoria'], $dados['destaque'], $dados['cod_produto'], $dados['tipo_prod'], $dados['modelo_prod'], $dados['localizacao_prod']);
   $result = $stmt->execute() ? true : false;
   $stmt->close();
   return $result;

@@ -30,6 +30,7 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/bootstrap.min.css">
     <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
     <title>Tmc.com | <?php echo $titlePage; ?> </title>
   </head>
 
@@ -39,7 +40,16 @@
     
     <!-- Conteudo da pagina -->
     <main>
+    <div class="row">
+    <div class="col-12">
+    <h2 class="text-center cor-letras font-weight-bold"><?php echo $infoProduto['nome_prod']?></h2>
+    </div>
+    </div>
+
       <div class="container">
+
+      <!-- LINHA HORIZONTAL -->
+      <hr></hr>
 
         <div class="row">
           <div class="col-12 col-md-6 mb-5">
@@ -57,6 +67,9 @@
                   <?php echo $infoProduto['nome_prod']?>
                 </h1>
                 <h5>Categoria: <?php echo $infoProduto['nome_categoria']?></h5>
+                <h5>Tipo: <?php echo $infoProduto['tipo_prod']?></h5>
+                <h5>Modelo: <?php echo $infoProduto['modelo_prod']?></h5>
+                <h5>Localização: <?php echo $infoProduto['localizacao_prod']?></h5>
                   <p class="card-text pt-2"><small class="text-muted">À Vista</small></p>
                   <p class="card-text h2 mt-n3 ft-laranja"><small>R$</small>
                     <?php echo number_format($infoProduto['valor_un'], 2, ',', '.') ?>
@@ -64,37 +77,69 @@
                 <p class="card-text ft-branca">Em Estoque: <?php echo $infoProduto['estoque'] ?>
                 </p>
               </div>
+
+              <!-- BOTÃO DE COMPRAR -->
               <div class="card-footer border-0 bg-transparent">
                 <a
                   href="<?php echo SITE_URL ?>/Controllers/c_pedido.php?addProduto=<?php echo $infoProduto['cod_produto'] ?>&valor=<?php echo $infoProduto['valor_un'] ?>"
                   class="btn btn-dark btn-block btn-comprar btn-lg">Adicionar ao Carrinho</a>
+              </div>
+
+            <!-- BOTÃO DE CHAT -->
+              <div class="card-footer border-0 bg-transparent">
+                <a
+                  href="<?php echo SITE_URL ?>/ ?>"
+                  class="btn btn-dark btn-block btn-comprar btn-lg">Bate-Papo</a>
               </div>
             </div>
           </div>
         </div>
 
         <div class="row mt-5">
-          <div class="col-12 text-center">
+          <div class="col-12 text-center cor-letras">
             <div class="tt-header-wrap">
               <div class="tt-header">
-                <h2>Informações do Produto</h2>
+                <h2 class="font-weight-bold">Informações do Produto</h2>
               </div>
             </div>
           </div>
         </div>
-        <div class="row px-4 pt-2">
-          <div class="col-12 text-center">
-            <p><?php echo $infoProduto['descricao_prod'] ?>
-            </p>
-          </div>
-          <div class="col-md-12 col-12 text-center">
-            <h3 class="h4">Detalhes</h3>
+
+    <!-- LINHA HORIZONTAL -->
+      <hr></hr>
+
+          <div class="col-md-12 col-12 mt-4 text-center">
+            <h3 class="h4 font-weight-bold">Detalhes</h3>
             <table class="table">
               <tbody>
+              <tr>
+                <th scope="row">Descrição</th>
+                <td>
+                <p><?php echo $infoProduto['descricao_prod'] ?></p>
+                </td>
+              </tr>
               <tr>
                 <th scope="row">Categoria</th>
                 <td>
                   <?php echo $infoProduto['nome_categoria']; ?>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Marca</th>
+                <td>
+                <?php echo $infoProduto['nome_categoria']?>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Modelo</th>
+                <td>
+                <?php echo $infoProduto['modelo_prod']?>
+                </td>
+              </tr>
+              <tr>
+                <th scope="row">Localização</th>
+                <td>
+                <?php echo $infoProduto['localizacao_prod']?>
                 </td>
               </tr>
               <tr>
@@ -110,71 +155,6 @@
 
       </div>
     </main>
-
-    <!--comentarios-->
-    <aside class="mt-5">
-      <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <div class="tt-header-wrap">
-              <div class="tt-header">
-                <h2>Comentários e Avaliações</h2>
-              </div>
-            </div>
-          </div>
-        </div>
-        <div class="row pt-2">
-          <div class="col-6">
-            <p class="text-left font-weight-bold"><span
-                class="h5 font-weight-bold">Nota do Produto: <?php echo $notaMedia['notaMedia']; ?></span>
-              <br><p class="font-weight-bold">Total de Avaliações: <?php echo $notaMedia['TotalAvaliacao']; ?> </p></p>
-          </div>
-          <div class="col-6 text-right">
-            <p class="text-right">
-              <a class=" btn btn-dark btn-comprar btn-lg"
-                href="<?php echo SITE_URL ?>/Views/Clientes/cadastroComentario.php?produto=<?php echo $infoProduto['cod_produto']; ?>&nome=<?php echo $infoProduto['nome_prod']; ?>">Comentar Produto</a>
-            </p>
-          </div>
-        </div>
-        <div class="row text-center">
-          <div class="col-12">
-            <?php foreach ($Comentarios as $comentario) {
-              if ($comentario['avaliacao'] == 1) {
-                $corAvaliacao = 'aval-ruim';
-              } elseif ($comentario['avaliacao'] >= 4) {
-                $corAvaliacao = 'aval-bom';
-              } else {
-                $corAvaliacao = 'aval-legal';
-              }
-              ?>
-              <div class="media p-3 rounded mb-2 bk-comen">
-                <div class="align-self-start mr-4">
-                  <p class="">CLIENTE: <small>
-                      <?php $nomeClienteComentario = explode(" ", $comentario['nome_cliente']);
-                      echo current($nomeClienteComentario) ?></small></p>
-                      <br>
-                  <p class="mt-n4">DATA: 
-                    <small><?php echo date('d-m-Y', strtotime($comentario['data_comentario'])) ?></small></p>
-                </div>
-                <div class="media-body">
-                  <h5 class="font-weight-bold ft-laranja mt-0 titulo-comentario">TÍTULO: <?php echo $comentario['titulo_comentario'] ?></h5>
-                  <p class="letra-ver">NOTA: <?php echo $comentario['avaliacao'] ?></p>
-                  <p class="">COMENTÁRIO: <?php echo $comentario['comentario'] ?></p>
-                </div>
-                <?php if ($comentario['cod_cliente'] == $clienteLogado) { ?>
-                  <div><a class="h4 letra-ver"
-                          href="<?php echo SITE_URL ?>/Controllers/c_comentario.php?cod_comentario=<?php echo $comentario['cod_comentario'] ?>&cod_produto=<?php echo $comentario['cod_produto'] ?>">DELETAR</a>
-                  </div>
-                <?php } ?>
-              </div>
-            <?php } ?>
-
-          </div>
-        </div>
-
-      </div>
-
-    </aside>
 
     <!-- footer site -->
     <?php include SITE_PATH . '/includes/footer.php'; ?>

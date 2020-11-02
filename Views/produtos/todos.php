@@ -36,6 +36,7 @@ $titlePage = "Todos os Produto";
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/bootstrap.min.css">
   <link rel="stylesheet" href="<?php echo SITE_URL ?>/css/styles.css">
   <link rel="icon" href="<?php echo SITE_URL ?>/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.11.2/css/all.css">
 
   <title>
     Tcm.com | <?php echo $titlePage; ?>

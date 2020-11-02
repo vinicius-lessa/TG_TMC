@@ -21,16 +21,16 @@
         <nav id="lista-menu">
           <ul>
             <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/todos.php">Anúncios</a>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/home/index.php">Anúncios</a>
             </li>
             <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/violao.php">Feed Musical</a>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/FeedMusical.php">Feed Musical</a>
             </li>
             <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/guitarra.php">Music Trade</a>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/MusicTradeCenter.php">Music Trade</a>
             </li>
             <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/bateria.php">Anunciar</a>
+              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/produtos/Anunciar.php">Anunciar</a>
             </li>
           </ul>
         </nav>

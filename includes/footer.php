@@ -6,10 +6,10 @@
           <ul>
             <!--RETIRAR FAVORITOS-->
             <li>
-              <a class="border-button ft-escuro font-weight-bold mt-5" href="<?php echo SITE_URL ?>/Views/pedidos/meusPedidos.php">Meus Pedidos</a>
+              <a class="border-button ft-escuro font-weight-bold text-center mt-5" href="<?php echo SITE_URL ?>/Views/home/sobreNos.php">Fale Conosco</a>
             </li>
             <li>
-              <a class="border-button ft-escuro font-weight-bold" href="<?php echo SITE_URL ?>/Views/home/sobreNos.php">Fale Conosco</a>
+            <a class="border-button ft-escuro font-weight-bold text-center mt-3" href="<?php echo SITE_URL ?>/Views/pedidos/meusPedidos.php">Meus Pedidos</a>
             </li>
           </ul>
         </nav>
@@ -18,10 +18,10 @@
         <nav id="lista-footer" class="bk-preto">
           <ul>
             <li>
-              <a class="border-button ft-escuro font-weight-bold mt-5" href="<?php echo SITE_URL ?>/Views/home/sobreNos.php">Sobre</a>
+              <a class="border-button ft-escuro font-weight-bold text-center mt-5" href="<?php echo SITE_URL ?>/Views/home/sobreNos.php">Sobre</a>
             </li>
             <li>
-              <a class="border-button ft-escuro font-weight-bold mb-5" href="<?php echo SITE_URL ?>/Views/adm/index.php">Área Administrativa</a>
+              <a class="border-button ft-escuro font-weight-bold text-center mb-5 mt-3" href="<?php echo SITE_URL ?>/Views/adm/index.php">Área Administrativa</a>
             </li>
           </ul>
         </nav>

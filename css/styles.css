@@ -255,14 +255,6 @@ section.destaques {
   margin-bottom: 50px;
 }
 
-#listaItensCarrosel .carousel-item {
-  height: 350px;
-  background-image: url("/images/produtos/tmc.png");
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: left 75%;
-}
-
 /*cards dos instrumentos*/
 img.img-cover {
   max-height: 270px;
