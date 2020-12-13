@@ -1,0 +1,12 @@
+HEROKU
+
+    COMPOSER: https://getcomposer.org/doc/00-intro.md
+        composer -v
+        php -v
+
+    HEROKU:
+        heroku login
+        heroku -v
+
+    GIT:
+        git --version
