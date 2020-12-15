@@ -4,6 +4,6 @@
 
     echo "<br><br>";
 
-    echo "Trabalho de Graduação 2021 - Aplicação Trade Music Center - BACKEND";
+    echo "Trabalho de Graduação 2021 - Aplicação Trade Music Center - BACKEND a";
 
 ?>
