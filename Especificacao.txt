@@ -3,6 +3,8 @@ HEROKU
     COMPOSER: https://getcomposer.org/doc/00-intro.md
         composer -v
         php -v
+        heroku config:
+            Verificar Banco de Dados
 
     HEROKU:
         heroku login
