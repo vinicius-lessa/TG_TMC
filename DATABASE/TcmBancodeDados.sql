@@ -158,21 +158,66 @@ CREATE TABLE `pedido_item` (
 
 -- ESTRUTURA
 
+CREATE TABLE `marca` (
+  `cod_marca` int(11) NOT NULL,
+  `descricao_marca` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
 -- INSERÇÃO DE DADOS
 
+INSERT INTO `marca` (`cod_marca`, `descricao_marca`) VALUES
+(1, 'Ibanez'),
+(2, 'Gibson'),
+(3, 'Fender'),
+(4, 'Epiphone');
+
 -- ÍNDICES - CHAVES ESTRANGEIRAS
+
+ALTER TABLE `marca`
+  ADD PRIMARY KEY (`cod_marca`);
+
+ALTER TABLE `marca`
+  MODIFY `cod_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 
 --
 -- TABELA MODELO
 --
 
--- ESTRUTURA
+CREATE TABLE `modelo` (
+  `cod_modelo` int(11) NOT NULL,
+  `descricao_modelo` varchar(50) NOT NULL,
+  `cod_categoria` int(11) NOT NULL,
+  `nome_categoria` varchar(50) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- INSERÇÃO DE DADOS
 
+INSERT INTO `modelo` 
+  (
+    `cod_modelo`, 
+    `descricao_modelo`,
+    `cod_categoria`, 
+    `nome_categoria`
+  ) VALUES
+  (1, 'Super Strato',1,'Guitarras'),
+  (2, 'Les Paul',1,'Guitarras'),
+  (3, 'Stratocaster',1,'Guitarras'),
+  (4, 'Telecaster',1,'Guitarras'),
+  (5, 'Flying V',1,'Guitarras'),
+  (6, 'SG',1,'Guitarras');
+
 -- ÍNDICES - CHAVES ESTRANGEIRAS
 
+ALTER TABLE `modelo`
+  ADD PRIMARY KEY (`cod_modelo`);
+  ADD KEY `FK_modelo_categoria` (`cod_categoria`);
+
+ALTER TABLE `modelo`
+  MODIFY `cod_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+ALTER TABLE `modelo`
+  ADD CONSTRAINT `FK_modelo_categoria` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`),
 
 --
 -- TABELA CATEGORIA
@@ -211,7 +256,6 @@ ALTER TABLE `categoria`
   MODIFY `cod_categoria` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 
-
 --
 -- TABELA USUÁRIOS
 --
@@ -221,10 +265,16 @@ ALTER TABLE `categoria`
 CREATE TABLE `usuario` (
   `cod_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(150) NOT NULL,
+  `idade` int(11) NOT NULL,
   `telefone` varchar(15) DEFAULT NULL,
-  `cpf` varchar(13) DEFAULT NULL,
+  `tipo_pessoa` char NOT NULL,
   `email` varchar(100) DEFAULT NULL,
-  `log` varchar(50) DEFAULT NULL,
+  `cpf_cnpj` varchar(14) DEFAULT NULL,  
+  `cep` varchar(8) DEFAULT NULL, 
+  `cidade` varchar(50) DEFAULT NULL,
+  `bairro` varchar(50) DEFAULT NULL,
+  `biografia` varchar(255) DEFAULT NULL,
+  `ativo` char NOT NULL,
   `senha` varchar(255) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -233,22 +283,34 @@ CREATE TABLE `usuario` (
 INSERT INTO `usuario` 
 (
   ( 
-    `cod_usuario`, 
-    `nome_usuario`, 
-    `telefone`, 
-    `cpf`, 
-    `email`, 
-    `log`, 
-    `senha`
+  `cod_usuario`,
+  `nome_usuario`,
+  `idade`,
+  `telefone`,
+  `tipo_pessoa`,
+  `email`,
+  `cpf_cnpj`,
+  `cep`,
+  `cidade`,
+  `bairro`,
+  `biografia`,
+  `ativo`,
+  `senha`
   ) 
   VALUES
   (
     1, 
-    'Vinícius Lessa', 
-    '2222222222', 
-    '555555555555', 
-    'vinicius@teste.com', 
-    'vinicius', 
+    'Vinícius Lessa',
+    21,
+    '11950769587',
+    'F', 
+    'vinicius@teste.com',
+    '46269889898',
+    '18131070',
+    'São Roque',
+    'Jardim Esther',
+    'Músico a 10 anos, toco guitarra, violão, contrabaixo, teclado e bateria. Possui um Home Studio onde realizo minhas gravações e demos.',
+    'T', 
     '$2y$10$dPxmh5OM5vULhzJ9ukd3r.DJ9275YEng7u.iQrHRYd.WY0eCkBoRu'
   );
 )
