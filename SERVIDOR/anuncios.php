@@ -22,19 +22,33 @@ if ($_SERVER['REQUEST_METHOD'] == 'GET'):
     // echo json_encode( ['verbo_http' => $_SERVER['REQUEST_METHOD']] );
 
     if ( !Empty($uri) && $uri <> 'index.php' ):
-        if ($uri == 'produto'):
-            $dados = Crud::select('SELECT * FROM estoque',[],TRUE);          
+        // if ($uri == 'produto'):
+        //     $dados = Crud::select('SELECT * FROM estoque',[],TRUE);          
+        // else:
+        //     if (is_numeric($uri)):
+        //         $dados = Crud::select('SELECT * FROM estoque WHERE ID = :ID',
+        //         ['ID' => $uri],
+        //         TRUE);
+        //     else:
+        //         echo json_encode(['mensagem' => 'O parâmetro não é numérico']);
+        //         http_response_code(406);
+        //         exit;
+        //     endif; 
+        // endif;
+
+        if ($uri == 'anuncios'):
+            $dados = Crud::select('SELECT * FROM anuncios',[],TRUE);          
         else:
             if (is_numeric($uri)):
-                $dados = Crud::select('SELECT * FROM estoque WHERE ID = :ID',
-                ['ID' => $uri],
+                $dados = Crud::select('SELECT * FROM anuncios WHERE COD_ANUNCIO = :COD_ANUNCIO',
+                ['COD_ANUNCIO' => $uri],
                 TRUE);
             else:
                 echo json_encode(['mensagem' => 'O parâmetro não é numérico']);
                 http_response_code(406);
                 exit;
             endif; 
-        endif;      
+        endif;
         
         if (!Empty($dados)):  
             echo json_encode($dados);

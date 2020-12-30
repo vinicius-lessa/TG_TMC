@@ -163,13 +163,6 @@ CREATE TABLE `marca` (
   `descricao_marca` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
--- INSERÇÃO DE DADOS
-
-INSERT INTO `marca` (`cod_marca`, `descricao_marca`) VALUES
-(1, 'Ibanez'),
-(2, 'Gibson'),
-(3, 'Fender'),
-(4, 'Epiphone');
 
 -- ÍNDICES - CHAVES ESTRANGEIRAS
 
@@ -178,6 +171,15 @@ ALTER TABLE `marca`
 
 ALTER TABLE `marca`
   MODIFY `cod_marca` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+
+-- INSERÇÃO DE DADOS
+
+INSERT INTO `marca` (`cod_marca`, `descricao_marca`) VALUES
+(1, 'Ibanez'),
+(2, 'Gibson'),
+(3, 'Fender'),
+(4, 'Epiphone');
 
 
 --
@@ -190,6 +192,22 @@ CREATE TABLE `modelo` (
   `cod_categoria` int(11) NOT NULL,
   `nome_categoria` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- ÍNDICES - CHAVES ESTRANGEIRAS
+
+ALTER TABLE `modelo`
+  ADD PRIMARY KEY (`cod_modelo`);
+
+ALTER TABLE `modelo`
+  MODIFY `cod_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+
+ALTER TABLE `modelo`
+  ADD KEY `FK_modelo_categoria` (`cod_categoria`);
+ 
+ALTER TABLE `modelo`
+  ADD CONSTRAINT `FK_modelo_categoria` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`);
+
 
 -- INSERÇÃO DE DADOS
 
@@ -206,18 +224,6 @@ INSERT INTO `modelo`
   (4, 'Telecaster',1,'Guitarras'),
   (5, 'Flying V',1,'Guitarras'),
   (6, 'SG',1,'Guitarras');
-
--- ÍNDICES - CHAVES ESTRANGEIRAS
-
-ALTER TABLE `modelo`
-  ADD PRIMARY KEY (`cod_modelo`);
-  ADD KEY `FK_modelo_categoria` (`cod_categoria`);
-
-ALTER TABLE `modelo`
-  MODIFY `cod_modelo` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
-
-ALTER TABLE `modelo`
-  ADD CONSTRAINT `FK_modelo_categoria` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`),
 
 --
 -- TABELA CATEGORIA
@@ -282,41 +288,41 @@ CREATE TABLE `usuario` (
 
 INSERT INTO `usuario` 
 (
-  ( 
-  `cod_usuario`,
-  `nome_usuario`,
-  `idade`,
-  `telefone`,
-  `tipo_pessoa`,
-  `email`,
-  `cpf_cnpj`,
-  `cep`,
-  `cidade`,
-  `bairro`,
-  `biografia`,
-  `ativo`,
-  `senha`
-  ) 
-  VALUES
-  (
-    1, 
-    'Vinícius Lessa',
-    21,
-    '11950769587',
-    'F', 
-    'vinicius@teste.com',
-    '46269889898',
-    '18131070',
-    'São Roque',
-    'Jardim Esther',
-    'Músico a 10 anos, toco guitarra, violão, contrabaixo, teclado e bateria. Possui um Home Studio onde realizo minhas gravações e demos.',
-    'T', 
-    '$2y$10$dPxmh5OM5vULhzJ9ukd3r.DJ9275YEng7u.iQrHRYd.WY0eCkBoRu'
-  );
-)
+`cod_usuario`,
+`nome_usuario`,
+`idade`,
+`telefone`,
+`tipo_pessoa`,
+`email`,
+`cpf_cnpj`,
+`cep`,
+`cidade`,
+`bairro`,
+`biografia`,
+`ativo`,
+`senha`
+) 
+VALUES
+(
+  1, 
+  'Vinícius Lessa',
+  21,
+  '11950769587',
+  'F', 
+  'vinicius@teste.com',
+  '46269889898',
+  '18131070',
+  'São Roque',
+  'Jardim Esther',
+  'Músico a 10 anos, toco guitarra, violão, contrabaixo, teclado e bateria. Possui um Home Studio onde realizo minhas gravações e demos.',
+  'T', 
+  '$2y$10$dPxmh5OM5vULhzJ9ukd3r.DJ9275YEng7u.iQrHRYd.WY0eCkBoRu'
+);
 
 -- ÍNDICES - CHAVES ESTRANGEIRAS
 
+ALTER TABLE `usuario`
+  ADD PRIMARY KEY (`cod_usuario`);
 
 --
 -- TABELA ANUNCIOS
@@ -331,16 +337,39 @@ CREATE TABLE `anuncios` (
   `valor_un` decimal(6,2) NOT NULL,
   `cover_img` varchar(250) DEFAULT NULL,
   `banner_img` varchar(250) DEFAULT NULL,
-  `status` tinyint(1) NOT NULL DEFAULT 0,
+  `status` tinyint(1) NOT NULL DEFAULT 1,
   `cod_categoria` int(11) NOT NULL,
   `descricao_categoria` varchar(50) NOT NULL,
   `cod_marca` int(11) NOT NULL,
-  `descricao_marca` varchar(50) NOT NULL
+  `descricao_marca` varchar(50) NOT null,
   `cod_modelo` int(11) NOT NULL,
   `descricao_modelo` varchar(50) NOT NULL,
   `cod_usuario` int(11) NOT NULL,
   `nome_usuario` varchar(150) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+
+-- ÍNDICES - CHAVES ESTRANGEIRAS
+
+ALTER TABLE `anuncios`
+  ADD PRIMARY KEY (`cod_anuncio`),
+  ADD KEY `FK_anuncio_categoria` (`cod_categoria`),
+  ADD KEY `FK_anuncio_marca` (`cod_marca`),
+  ADD KEY `FK_anuncio_modelo` (`cod_modelo`),
+  ADD KEY `FK_anuncio_usuario` (`cod_usuario`);
+
+ALTER TABLE `anuncios`
+  ADD CONSTRAINT `FK_anuncio_categoria` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`);
+
+ALTER TABLE `anuncios`
+  ADD CONSTRAINT `FK_anuncio_marca` FOREIGN KEY (`cod_marca`) REFERENCES `marca` (`cod_marca`);
+
+ALTER TABLE `anuncios`
+  ADD CONSTRAINT `FK_anuncio_modelo` FOREIGN KEY (`cod_modelo`) REFERENCES `modelo` (`cod_modelo`);
+ 
+ALTER TABLE `anuncios`
+  ADD CONSTRAINT `FK_anuncio_usuario` FOREIGN KEY (`cod_usuario`) REFERENCES `usuario` (`cod_usuario`);
+
 
 -- INSERÇÃO DE DADOS
 
@@ -356,9 +385,9 @@ INSERT INTO `anuncios`
     `cod_categoria`,
     `descricao_categoria`,
     `cod_marca`,
-    `descricao_marca`
+    `descricao_marca`,
     `cod_modelo`,
-    `descricao_modelo`
+    `descricao_modelo`,
     `cod_usuario`,
     `nome_usuario`    
   ) VALUES
@@ -377,23 +406,9 @@ INSERT INTO `anuncios`
     1, 
     'Super Strato',
     1, 
-    'Vinícius Lessa',     
+    'Vinícius Lessa'   
   );
 
--- ÍNDICES - CHAVES ESTRANGEIRAS
-
-ALTER TABLE `anuncios`
-  ADD PRIMARY KEY (`cod_anuncio`),
-  ADD KEY `FK_anuncio_categoria` (`cod_categoria`);
-  ADD KEY `FK_anuncio_marca` (`cod_marca`);
-  ADD KEY `FK_anuncio_modelo` (`cod_modelo`);
-  ADD KEY `FK_anuncio_usuario` (`cod_usuario`);
-
-ALTER TABLE `anuncios`
-  ADD CONSTRAINT `FK_anuncio_categoria` FOREIGN KEY (`cod_categoria`) REFERENCES `categoria` (`cod_categoria`),
-  ADD CONSTRAINT `FK_anuncio_marca` FOREIGN KEY (`cod_marca`) REFERENCES `marca` (`cod_marca`),
-  ADD CONSTRAINT `FK_anuncio_modelo` FOREIGN KEY (`cod_modelo`) REFERENCES `modelo` (`cod_modelo`),
-  ADD CONSTRAINT `FK_anuncio_usuario` FOREIGN KEY (`cod_usuario`) REFERENCES `usuarios` (`cod_usuario`);
 
 
 /************************************************************************************************/
@@ -433,12 +448,6 @@ ALTER TABLE `pedido`
 ALTER TABLE `pedido_item`
   ADD KEY `FK_pedidoitem_pedido` (`cod_pedido`),
   ADD KEY `FK_pedidoitem_anuncio` (`cod_anuncio`);
-
---
--- Índices para tabela `usuario`
---
-ALTER TABLE `usuario`
-  ADD PRIMARY KEY (`cod_usuario`);
 
 --
 -- AUTO_INCREMENT de tabelas despejadas
